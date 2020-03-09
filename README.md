@@ -20,7 +20,20 @@ directory that it can. If undesired, invoke as
 dconf-dump is an exception. I decided against committing the actual binary file,
 so you have to use dconf to import it into your database. I might break it up
 in the future if it gets bigger so that I can deploy only the settings for
-specific packages.
+specific packages. For now, the file is created by running
+
+    dconf dump / > dconf-dump
+
+And the values can be read back by running
+
+    dconf load / < dconf-dump
+
+This will not overwrite values not included in dconf-dump. If the previous
+database is to be discarded, it can be done by running
+
+    dconf reset -f /
 
 The configs are used in arch linux. They might be incompatible with the software
 versions on any other distro.
+
+Dependencies will be documented in each package's README.md.
