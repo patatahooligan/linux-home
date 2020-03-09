@@ -25,7 +25,7 @@ mode='Downward'
 post-messages=false
 ratio=4.0
 release=0.0
-state=false
+state=true
 threshold=-40.0
 
 [com/github/wwmm/pulseeffects/sinkinputs/convolver]
@@ -494,6 +494,7 @@ menu-headers=true
 [com/solus-project/budgie-panel/instance/icon-tasklist/{ea7029f8-5c80-11ea-8f6a-b42e99c18713}]
 grouping=true
 only-pinned=false
+pinned-launchers=['firefox.desktop', 'thunar.desktop', 'org.kde.konsole.desktop']
 restrict-to-workspace=true
 
 [com/solus-project/budgie-panel/instance/spacer/{02711612-5c8a-11ea-b36b-b42e99c18713}]
@@ -509,7 +510,7 @@ size=3
 addbutton-visibility='hover'
 
 [com/solus-project/budgie-panel/panels/{ea67709c-5c80-11ea-8f6a-b42e99c18713}]
-applets=['02711612-5c8a-11ea-b36b-b42e99c18713', '0f2cf312-5c8a-11ea-b36b-b42e99c18713', 'ea7029f8-5c80-11ea-8f6a-b42e99c18713', 'ea8ad6d6-5c80-11ea-8f6a-b42e99c18713', 'ea8d4eb6-5c80-11ea-8f6a-b42e99c18713', '637bb1ee-5c88-11ea-b36b-b42e99c18713', 'ea866eca-5c80-11ea-8f6a-b42e99c18713', 'ea8e8df8-5c80-11ea-8f6a-b42e99c18713', 'ea67c466-5c80-11ea-8f6a-b42e99c18713', 'ea8cbe1a-5c80-11ea-8f6a-b42e99c18713', 'ea8d9772-5c80-11ea-8f6a-b42e99c18713', 'ea8d5c3a-5c80-11ea-8f6a-b42e99c18713', 'ea8617fe-5c80-11ea-8f6a-b42e99c18713', 'b2af8b00-5c88-11ea-b36b-b42e99c18713']
+applets=['ea7029f8-5c80-11ea-8f6a-b42e99c18713', '0f2cf312-5c8a-11ea-b36b-b42e99c18713', 'ea8ad6d6-5c80-11ea-8f6a-b42e99c18713', 'ea8d4eb6-5c80-11ea-8f6a-b42e99c18713', '637bb1ee-5c88-11ea-b36b-b42e99c18713', '02711612-5c8a-11ea-b36b-b42e99c18713', 'ea866eca-5c80-11ea-8f6a-b42e99c18713', 'ea8e8df8-5c80-11ea-8f6a-b42e99c18713', 'ea67c466-5c80-11ea-8f6a-b42e99c18713', 'ea8cbe1a-5c80-11ea-8f6a-b42e99c18713', 'ea8d9772-5c80-11ea-8f6a-b42e99c18713', 'ea8d5c3a-5c80-11ea-8f6a-b42e99c18713', 'ea8617fe-5c80-11ea-8f6a-b42e99c18713', 'b2af8b00-5c88-11ea-b36b-b42e99c18713']
 dock-mode=false
 location='left'
 size=50
@@ -518,13 +519,20 @@ transparency='dynamic'
 
 [com/solus-project/budgie-wm]
 button-layout='appmenu:minimize,maximize,close'
+caffeine-mode=false
 center-windows=false
 
 [org/gnome/control-center]
-last-panel='keyboard'
+last-panel='background'
 
 [org/gnome/desktop/a11y]
 always-show-universal-access-status=false
+
+[org/gnome/desktop/background]
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/gnome/Icetwigs.jpg'
+primary-color='#ffffff'
+secondary-color='#000000'
 
 [org/gnome/desktop/input-sources]
 current=uint32 0
@@ -549,8 +557,17 @@ numlock-state=true
 [org/gnome/desktop/privacy]
 disable-camera=true
 
+[org/gnome/desktop/screensaver]
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/gnome/Icetwigs.jpg'
+primary-color='#ffffff'
+secondary-color='#000000'
+
 [org/gnome/desktop/search-providers]
 sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
+
+[org/gnome/desktop/session]
+idle-delay=uint32 600
 
 [org/gnome/desktop/sound]
 event-sounds=true
@@ -596,6 +613,12 @@ binding='<Super>f'
 command='thunar'
 name='thunar'
 
+[org/gnome/settings-daemon/plugins/power]
+idle-dim=true
+sleep-inactive-ac-timeout=1200
+sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-timeout=1200
+
 [org/gnome/settings-daemon/plugins/xsettings]
 antialiasing='grayscale'
 hinting='slight'
@@ -616,6 +639,20 @@ use-theme-colors=false
 [org/gtk/settings/color-chooser]
 custom-colors=[(0.66666666666666663, 0.66666666666666663, 0.66666666666666663, 1.0)]
 selected-color=(true, 1.0, 1.0, 1.0, 1.0)
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=165
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-position=(717, 66)
+window-size=(1203, 902)
 
 [org/ubuntubudgie/plugins/budgie-wsoverview]
 ws-overview-index=3
