@@ -1,9 +1,17 @@
+[ca/desrt/dconf-editor]
+saved-pathbar-path='/org/gnome/shell/app-switcher/'
+saved-view='/org/gnome/shell/app-switcher/'
+show-warning=false
+window-height=500
+window-is-maximized=true
+window-width=540
+
 [com/github/wwmm/pulseeffects]
 enable-all-sinkinputs=false
 last-used-preset='Presets'
 use-dark-theme=false
-window-height=1033
-window-width=1870
+window-height=1006
+window-width=1920
 
 [com/github/wwmm/pulseeffects/sinkinputs/autogain]
 installed=true
@@ -22,7 +30,7 @@ installed=true
 knee=0.0
 makeup=0.0
 mode='Downward'
-post-messages=false
+post-messages=true
 ratio=4.0
 release=0.0
 state=true
@@ -30,7 +38,7 @@ threshold=-40.0
 
 [com/github/wwmm/pulseeffects/sinkinputs/convolver]
 installed=true
-post-messages=false
+post-messages=true
 state=false
 
 [com/github/wwmm/pulseeffects/sinkinputs/crossfeed]
@@ -533,7 +541,7 @@ timer-increment=1
 width=700
 
 [org/gnome/control-center]
-last-panel='display'
+last-panel='sound'
 
 [org/gnome/desktop/a11y]
 always-show-universal-access-status=false
@@ -570,23 +578,38 @@ clock-show-seconds=false
 clock-show-weekday=true
 cursor-theme='breeze_cursors'
 document-font-name='Lucida Sans Unicode 11'
+enable-animations=true
 enable-hot-corners=false
 font-name='Lucida Sans Unicode 11'
+gtk-enable-primary-paste=false
 gtk-im-module='gtk-im-context-simple'
 gtk-theme='Adwaita-dark'
 icon-theme='breeze-dark'
+locate-pointer=false
 monospace-font-name='Source Code Pro 10'
 show-battery-percentage=false
 toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-kde-yakuake', 'org-gnome-extensions', 'firefox', 'org-kde-konsole', 'gnome-control-center']
+application-children=['org-kde-yakuake', 'org-gnome-extensions', 'firefox', 'org-kde-konsole', 'gnome-control-center', 'firefox-developer-edition', 'code-oss', 'libreoffice-startcenter', 'steam', 'discord']
+
+[org/gnome/desktop/notifications/application/code-oss]
+application-id='code-oss.desktop'
+
+[org/gnome/desktop/notifications/application/discord]
+application-id='discord.desktop'
+
+[org/gnome/desktop/notifications/application/firefox-developer-edition]
+application-id='firefox-developer-edition.desktop'
 
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
+
+[org/gnome/desktop/notifications/application/libreoffice-startcenter]
+application-id='libreoffice-startcenter.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-extensions]
 application-id='org.gnome.Extensions.desktop'
@@ -598,14 +621,23 @@ application-id='org.kde.konsole.desktop'
 application-id='org.kde.yakuake.desktop'
 enable=false
 
+[org/gnome/desktop/notifications/application/steam]
+application-id='steam.desktop'
+
 [org/gnome/desktop/peripherals/keyboard]
 numlock-state=true
 
+[org/gnome/desktop/peripherals/touchpad]
+click-method='none'
+two-finger-scrolling-enabled=true
+
 [org/gnome/desktop/privacy]
 disable-camera=true
+remember-recent-files=false
 
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
+lock-delay=uint32 0
 picture-options='zoom'
 picture-uri='file:///home/patatahooligan/.local/share/backgrounds/2020-03-15-17-41-18-dark-souls-wallpaper-clean.png'
 primary-color='#000000000000'
@@ -620,7 +652,7 @@ idle-delay=uint32 600
 [org/gnome/desktop/sound]
 allow-volume-above-100-percent=false
 event-sounds=true
-theme-name='__custom'
+theme-name='freedesktop'
 
 [org/gnome/desktop/wm/keybindings]
 move-to-workspace-1=['<Primary><Shift><Alt>exclam']
@@ -638,7 +670,7 @@ auto-raise=false
 auto-raise-delay=250
 button-layout='appmenu:minimize,maximize,close'
 focus-mode='click'
-num-workspaces=2
+num-workspaces=9
 titlebar-font='Lucida Sans Unicode 11'
 workspace-names=@as []
 
@@ -737,6 +769,7 @@ history=['firefox']
 [org/gnome/mutter]
 attach-modal-dialogs=true
 center-new-windows=false
+dynamic-workspaces=false
 edge-tiling=true
 overlay-key='Super_L'
 
@@ -774,7 +807,7 @@ name='konsole'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Super>b'
-command='firefox'
+command='firefox-developer-edition'
 name='firefox'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
@@ -798,17 +831,23 @@ app-picker-view=uint32 1
 command-history=['loginctl', 'firefox', 'r']
 disable-user-extensions=false
 disabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['TopIcons@phocean.net', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'arc-menu@linxgem33.com']
+enabled-extensions=['TopIcons@phocean.net', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'arc-menu@linxgem33.com', 'wsmatrix@martin.zurowietz.de']
 favorite-apps=['firefox-developer-edition.desktop']
+
+[org/gnome/shell/app-switcher]
+current-workspace-only=true
 
 [org/gnome/shell/extensions/arc-menu]
 application-shortcuts-list=[['Settings', 'preferences-system-symbolic', 'gnome-control-center.desktop'], ['Tweaks', 'org.gnome.tweaks-symbolic', 'org.gnome.tweaks.desktop'], ['Activities Overview', 'view-fullscreen-symbolic', 'ArcMenu_ActivitiesOverview']]
+arc-menu-placement='Panel'
 border-color='rgb(63,62,64)'
+color-themes=[['Arc Menu Theme', 'rgba(28, 28, 28, 0.98)', 'rgba(211, 218, 227, 1)', 'rgb(63,62,64)', 'rgba(238, 238, 236, 0.1)', 'rgb(63,62,64)', '9', '0', '0', '0', '0', 'false'], ['Dark Blue Theme', 'rgb(25,31,34)', 'rgb(189,230,251)', 'rgb(41,50,55)', 'rgb(41,50,55)', 'rgb(41,50,55)', '9', '1', '5', '15', '20', 'true'], ['Light Blue Theme', 'rgb(255,255,255)', 'rgb(51,51,51)', 'rgb(235,235,235)', 'rgba(189,230,251,0.9)', 'rgba(189,230,251,0.9)', '9', '1', '5', '15', '20', 'true'], ['patatahooligan', 'rgba(28,28,28,0.97)', 'rgba(211, 218, 227, 1)', 'rgb(63,62,64)', 'rgba(238, 238, 236, 0.1)', 'rgb(63,62,64)', '9', '2', '20', '0', '0', 'false']]
 disable-category-arrows=false
 dtp-dtd-state=[false, false]
 enable-clock-widget-raven=false
 enable-custom-arc-menu=true
 enable-custom-arc-menu-layout=true
+enable-custom-shortcuts=false
 enable-large-icons=false
 enable-pinned-apps=true
 enable-sub-menus=false
@@ -836,6 +875,8 @@ reload-theme=false
 remove-menu-arrow=false
 right-panel-width=205
 separator-color='rgb(63,62,64)'
+show-bookmarks=false
+show-external-devices=false
 ubuntu-dash-pinned-app-list=['Home', 'ArcMenu_Home', 'ArcMenu_Home', 'Documents', 'ArcMenu_Documents', 'ArcMenu_Documents', 'Downloads', 'ArcMenu_Downloads', 'ArcMenu_Downloads', 'Software', '', '.desktop', 'Files', 'system-file-manager', 'org.gnome.Nautilus.desktop', 'Log Out', 'application-exit-symbolic', 'ArcMenu_LogOut', 'Lock', 'changes-prevent-symbolic', 'ArcMenu_Lock', 'Power Off', 'system-shutdown-symbolic', 'ArcMenu_PowerOff']
 vert-separator=false
 
@@ -848,6 +889,16 @@ icon-size=24
 icon-spacing=12
 tray-order=10
 tray-pos='right'
+
+[org/gnome/shell/extensions/wsmatrix]
+cache-popup=false
+multi-monitor=false
+num-rows=3
+popup-timeout=500
+scale=0.10000000000000002
+show-overview-grid=true
+show-thumbnails=true
+wraparound-mode='rows-columns'
 
 [org/gnome/terminal/legacy]
 theme-variant='dark'
@@ -862,8 +913,8 @@ use-system-font=false
 use-theme-colors=false
 
 [org/gtk/settings/color-chooser]
-custom-colors=[(0.10980392156862745, 0.10980392156862745, 0.10980392156862745, 0.96999999999999997), (0.10980392156862745, 0.10980392156862745, 0.10980392156862745, 0.94999999999999996), (0.10980392156862745, 0.10980392156862745, 0.10980392156862745, 0.95000000000000007), (0.10980392156862745, 0.10980392156862745, 0.10980392156862745, 0.94256799999999996), (0.10980392156862745, 0.10980392156862745, 0.10980392156862745, 0.94256756756756754), (0.10980392156862745, 0.10980392156862745, 0.10980392156862745, 0.92905400000000005), (0.93333333333333335, 0.93333333333333335, 0.92549019607843142, 0.10000000000000001), (0.10980392156862745, 0.10980392156862745, 0.10980392156862745, 0.92905405405405406)]
-selected-color=(true, 0.10980392156862745, 0.10980392156862745, 0.10980392156862745, 0.96999999999999997)
+custom-colors=[(0.89387387387387418, 0.58666666666666667, 1.0, 1.0), (1.0, 0.68627450980392157, 0.96470588235294119, 1.0), (1.0, 0.68666666666666676, 0.96594202898550729, 1.0), (0.67843137254901964, 0.49803921568627452, 0.6588235294117647, 0.54054100000000005), (0.67843137254901964, 0.49803921568627457, 0.6588235294117647, 0.54054054054054057), (0.82745098039215681, 0.85490196078431369, 0.8901960784313725, 1.0), (0.24705882352941178, 0.24313725490196078, 0.25098039215686274, 1.0), (0.93673469387755115, 0.69000000000000006, 1.0, 0.22972972972972974)]
+selected-color=(true, 0.89387387387387418, 0.58666666666666667, 1.0, 1.0)
 
 [org/gtk/settings/file-chooser]
 date-format='regular'
@@ -876,7 +927,7 @@ sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
 type-format='category'
-window-position=(26, 23)
+window-position=(359, 79)
 window-size=(1203, 902)
 
 [org/ubuntubudgie/plugins/budgie-wsoverview]
