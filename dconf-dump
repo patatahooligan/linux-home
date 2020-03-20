@@ -1,6 +1,44 @@
+[apps/guake/general]
+compat-delete='delete-sequence'
+display-n=0
+display-tab-names=0
+gtk-prefer-dark-theme=true
+gtk-theme-name='Adwaita-dark'
+history-size=1000
+infinite-history=true
+max-tab-name-length=100
+mouse-display=true
+open-tab-cwd=true
+prompt-on-quit=true
+quick-open-command-line='gedit %(file_path)s'
+restore-tabs-notify=false
+restore-tabs-startup=false
+save-tabs-when-changed=false
+scroll-keystroke=true
+use-default-font=false
+use-popup=true
+use-scrollbar=true
+use-trayicon=true
+window-halignment=0
+window-height=100
+window-losefocus=true
+window-refocus=false
+window-tabbar=true
+window-width=100
+
+[apps/guake/style/background]
+transparency=98
+
+[apps/guake/style/font]
+allow-bold=true
+bold-is-bright=true
+palette='#000000000000:#aaaa00000000:#0000aaaa0000:#aaaa55550000:#00000000aaaa:#aaaa0000aaaa:#0000aaaaaaaa:#aaaaaaaaaaaa:#555555555556:#ffff55555555:#5555ffff5555:#ffffffff5555:#55555555ffff:#ffff5555ffff:#5555ffffffff:#ffffffffffff:#ffffffffffff:#000000000000'
+palette-name='Linux Console'
+style='Fira Code Medium 13'
+
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gnome/shell/app-switcher/'
-saved-view='/org/gnome/shell/app-switcher/'
+saved-pathbar-path='/org/gnome/desktop/'
+saved-view='/org/gnome/desktop/'
 show-warning=false
 window-height=500
 window-is-maximized=true
@@ -541,7 +579,7 @@ timer-increment=1
 width=700
 
 [org/gnome/control-center]
-last-panel='sound'
+last-panel='background'
 
 [org/gnome/desktop/a11y]
 always-show-universal-access-status=false
@@ -559,7 +597,7 @@ name='lsp-plugins'
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/patatahooligan/.local/share/backgrounds/2020-03-15-17-41-18-dark-souls-wallpaper-clean.png'
+picture-uri='file:///home/patatahooligan/.local/share/backgrounds/2020-03-20-22-42-19-klttow3qk2e41.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -591,7 +629,7 @@ show-battery-percentage=false
 toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-kde-yakuake', 'org-gnome-extensions', 'firefox', 'org-kde-konsole', 'gnome-control-center', 'firefox-developer-edition', 'code-oss', 'libreoffice-startcenter', 'steam', 'discord']
+application-children=['org-kde-yakuake', 'org-gnome-extensions', 'firefox', 'org-kde-konsole', 'gnome-control-center', 'firefox-developer-edition', 'code-oss', 'libreoffice-startcenter', 'steam', 'discord', 'org-gnome-nautilus', 'wine']
 
 [org/gnome/desktop/notifications/application/code-oss]
 application-id='code-oss.desktop'
@@ -614,6 +652,9 @@ application-id='libreoffice-startcenter.desktop'
 [org/gnome/desktop/notifications/application/org-gnome-extensions]
 application-id='org.gnome.Extensions.desktop'
 
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
 [org/gnome/desktop/notifications/application/org-kde-konsole]
 application-id='org.kde.konsole.desktop'
 
@@ -623,6 +664,9 @@ enable=false
 
 [org/gnome/desktop/notifications/application/steam]
 application-id='steam.desktop'
+
+[org/gnome/desktop/notifications/application/wine]
+application-id='wine.desktop'
 
 [org/gnome/desktop/peripherals/keyboard]
 numlock-state=true
@@ -639,7 +683,7 @@ remember-recent-files=false
 color-shading-type='solid'
 lock-delay=uint32 0
 picture-options='zoom'
-picture-uri='file:///home/patatahooligan/.local/share/backgrounds/2020-03-15-17-41-18-dark-souls-wallpaper-clean.png'
+picture-uri='file:///home/patatahooligan/.local/share/backgrounds/2020-03-20-22-42-19-klttow3qk2e41.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -797,13 +841,13 @@ custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybin
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>t'
-command='yakuake'
-name='yakuake'
+command='guake'
+name='guake'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Primary><Alt>t'
-command='konsole'
-name='konsole'
+command='gnome-terminal'
+name='gnome-terminal'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Super>b'
@@ -831,7 +875,7 @@ app-picker-view=uint32 1
 command-history=['loginctl', 'firefox', 'r']
 disable-user-extensions=false
 disabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['TopIcons@phocean.net', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'arc-menu@linxgem33.com', 'wsmatrix@martin.zurowietz.de']
+enabled-extensions=['windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'arc-menu@linxgem33.com', 'wsmatrix@martin.zurowietz.de', 'TopIcons@phocean.net']
 favorite-apps=['firefox-developer-edition.desktop']
 
 [org/gnome/shell/app-switcher]
@@ -906,9 +950,12 @@ theme-variant='dark'
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 background-color='rgb(0,0,0)'
 bold-is-bright=true
-font='Fira Code Medium 12'
+default-size-columns=173
+default-size-rows=38
+font='Fira Code Medium 13'
 foreground-color='rgb(255,255,255)'
-palette=['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+palette=['rgb(0,0,0)', 'rgb(205,0,0)', 'rgb(0,205,0)', 'rgb(205,205,0)', 'rgb(0,0,238)', 'rgb(205,0,205)', 'rgb(0,205,205)', 'rgb(229,229,229)', 'rgb(127,127,127)', 'rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(255,255,0)', 'rgb(92,92,255)', 'rgb(255,0,255)', 'rgb(0,255,255)', 'rgb(255,255,255)']
+scrollback-unlimited=true
 use-system-font=false
 use-theme-colors=false
 
@@ -927,7 +974,7 @@ sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
 type-format='category'
-window-position=(359, 79)
+window-position=(26, 23)
 window-size=(1203, 902)
 
 [org/ubuntubudgie/plugins/budgie-wsoverview]
