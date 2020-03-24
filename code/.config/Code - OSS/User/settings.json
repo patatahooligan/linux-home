@@ -22,5 +22,6 @@
         72,
         80
     ],
-    "extensions.ignoreRecommendations": false
+    "extensions.ignoreRecommendations": false,
+    "rust-client.disableRustup": true
 }
