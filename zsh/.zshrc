@@ -47,3 +47,7 @@ export EDITOR=nano
 # Enter gpg passphrase through terminal shell
 # This is required for signing commits through remote sessions
 export GPG_TTY=$(tty)
+
+# Update when there are no news to indicate that intervention is
+# needed. When there are news, display them.
+alias safe-update='if [ $(yay -Pw | tee /dev/tty | wc -l) = 0 ]; then yay; fi'
