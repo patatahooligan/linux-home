@@ -50,4 +50,13 @@ export GPG_TTY=$(tty)
 
 # Update when there are no news to indicate that intervention is
 # needed. When there are news, display them.
-alias safe-update='if [ $(yay -Pw | tee /dev/tty | wc -l) = 0 ]; then yay; fi'
+safe-update() {
+    TEMP_FILE=$(mktemp)
+    yay -Pw > ${TEMP_FILE}
+    if [ $(wc -l ${TEMP_FILE} | awk '{print $1}') = 0 ]
+    then
+        yay -Syu
+    else
+        cat ${TEMP_FILE}
+    fi
+}
