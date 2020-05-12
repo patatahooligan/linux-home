@@ -8,3 +8,9 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Enable line numbering
 set number
+
+" Enable rulers at 80, 100, 120 characters
+" Should be grey, but maybe that's not true on all pallets. Might have to do
+" some tests and reconsider.
+set colorcolumn=80,100,120
+highlight ColorColumn ctermbg=8 guibg=lightgrey
