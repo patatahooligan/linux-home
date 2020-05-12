@@ -37,8 +37,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Personal settings unrelated to zsh
-export VISUAL=nano
-export EDITOR=nano
+export VISUAL=vim
+export EDITOR=vim
 
 # fzf
 . /usr/share/fzf/key-bindings.zsh
