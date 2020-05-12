@@ -1,0 +1,7 @@
+[/]
+attach-modal-dialogs=false
+center-new-windows=false
+dynamic-workspaces=false
+edge-tiling=true
+overlay-key='Super_L'
+workspaces-only-on-primary=false

@@ -1,0 +1,18 @@
+[/]
+clock-format='24h'
+clock-show-date=true
+clock-show-seconds=false
+clock-show-weekday=true
+cursor-theme='pArch-24'
+document-font-name='Lucida Sans Unicode 11'
+enable-animations=true
+enable-hot-corners=false
+font-name='Lucida Sans Unicode 11'
+gtk-enable-primary-paste=false
+gtk-im-module='gtk-im-context-simple'
+gtk-theme='Adwaita-dark'
+icon-theme='Papirus-Dark'
+locate-pointer=false
+monospace-font-name='Source Code Pro 10'
+show-battery-percentage=false
+toolkit-accessibility=false

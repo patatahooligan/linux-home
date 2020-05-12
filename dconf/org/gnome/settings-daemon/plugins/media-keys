@@ -1,0 +1,22 @@
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[custom-keybindings/custom0]
+binding='<Super>t'
+command='guake'
+name='guake'
+
+[custom-keybindings/custom1]
+binding='<Primary><Alt>t'
+command='gnome-terminal'
+name='gnome-terminal'
+
+[custom-keybindings/custom2]
+binding='<Super>b'
+command='firefox'
+name='firefox'
+
+[custom-keybindings/custom3]
+binding='<Super>f'
+command='thunar'
+name='thunar'
