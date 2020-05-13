@@ -16,7 +16,7 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
-plugins=(git zsh-autosuggestions)
+plugins=(zsh-autosuggestions)
 
 # Autosuggestions options
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
