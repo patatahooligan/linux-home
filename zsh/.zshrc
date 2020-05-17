@@ -35,6 +35,10 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+# Disable autocd because it often causes me to accidentally change directory,
+# while I never intentionally use it
+unsetopt AUTO_CD
+
 
 # Personal settings unrelated to zsh
 export VISUAL=vim
