@@ -7,7 +7,7 @@ source $VIMRUNTIME/defaults.vim
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Enable line numbering
-set number
+set relativenumber
 
 " Enable rulers at 72, 80, 100, 120 characters
 " Most of the time I use a width of 80 characters, but depending on the
@@ -15,3 +15,13 @@ set number
 " that's not true on all pallets. Might have to do some tests and reconsider.
 set colorcolumn=72,80,100,120
 highlight ColorColumn ctermbg=8 guibg=lightgrey
+
+" Not sure if this should always be on, but try it out for now. The wrapping
+" makes a lot of code I work on unreadable.
+set nowrap
+
+" ctags shortcut for autocompletion
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" Enable always on status bar
+set laststatus=2
