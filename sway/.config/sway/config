@@ -21,10 +21,9 @@ set $term kitty
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 ### Output configuration
-# Solid black background to look nice in gaps
-output * bg #000000 solid_color
 output DP-3 resolution 1920x1080 position 0,0
 output HDMI-A-1 resolution 1920x1080 position 1920,0
+output * background /var/pictures/pacwall.png center #000000
 
 ### Idle configuration
 #
