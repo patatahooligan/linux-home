@@ -64,3 +64,5 @@ safe-update() {
         cat ${TEMP_FILE}
     fi
 }
+
+alias exa='exa -la --git --color-scale --git-ignore'
