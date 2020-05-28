@@ -6,8 +6,10 @@ source $VIMRUNTIME/defaults.vim
 " Use 4 spaces for indentation, make tabs = 4 spaces
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-" Enable line numbering
-set relativenumber
+" Set linue numbering to hybrid: the current line gets its absolute number to
+" use as a reference, but the rest get relative numbers to assist in
+" navigation.
+set number relativenumber
 
 " Enable rulers at 72, 80, 100, 120 characters
 " Most of the time I use a width of 80 characters, but depending on the
