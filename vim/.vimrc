@@ -27,3 +27,9 @@ map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " Enable always on status bar
 set laststatus=2
+
+" Disable mouse because it causes some issues, especially concerning clipboard
+" integration with the rest of the system. Maybe I can selectively enable it
+" for some modes without causing issues, but I'm not sure if I want to. Leave
+" it fully off for now and potentially change it later.
+set mouse=
