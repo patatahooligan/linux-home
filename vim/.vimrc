@@ -33,3 +33,7 @@ set laststatus=2
 " for some modes without causing issues, but I'm not sure if I want to. Leave
 " it fully off for now and potentially change it later.
 set mouse=
+
+" Highlight (usually) unwanted whitespace, such as trailing spaces
+:highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+:match ExtraWhitespace /\s\+\%#\@<!$/
