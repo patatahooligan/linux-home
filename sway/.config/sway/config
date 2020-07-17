@@ -236,3 +236,5 @@ client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
 client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 
 include /etc/sway/config.d/*
+
+font Noto Serif 12
