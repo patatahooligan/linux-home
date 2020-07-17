@@ -1,3 +1,8 @@
+" Set leader key. Do this first to make sure no mappings are registered with
+" the default value.
+let mapleader = " "
+let maplocalleader = " "
+
 " Load the default settings. Vim would skip them when it finds
 " a ~/.vimrc
 unlet! skip_defaults_vim
