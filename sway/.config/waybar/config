@@ -6,7 +6,7 @@
     "modules-center": ["sway/window"],
     "modules-right": [
         "idle_inhibitor", "pulseaudio", "cpu", "memory",
-        "temperature", "clock", "tray"],
+        "temperature", "custom/temperature", "clock", "tray"],
 
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -63,19 +63,15 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "pulseeffects"
     },
 
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
+    "custom/temperature": {
+        "interval": 5,
+        "format": "{}°C",
+        "return-type": "",
         "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "exec": "sensors -A | sed -e 's/([^)]*)//g' | grep -F '°C' | sed -E 's/[^+]*\\+(.*)°C.*/\\1/g' | sort -n | tail -n1"
     }
 }
