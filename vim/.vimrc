@@ -8,6 +8,10 @@ let maplocalleader = " "
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
+" Load plugins
+packloadall
+silent! helptags ALL
+
 " Use 4 spaces for indentation, make tabs = 4 spaces
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
