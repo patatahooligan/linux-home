@@ -1,8 +1,8 @@
 # Path to oh-my-zsh installation (arch)
-ZSH=/usr/share/oh-my-zsh/
+ZSH=~/.oh-my-zsh/
 
-ZSH_THEME="agnoster-patatahooligan"
-DEFAULT_USER="patatahooligan"
+ZSH_THEME="agnoster"
+DEFAULT_USER="filon"
 
 # Completion options
 # CASE_SENSITIVE="true"
@@ -63,26 +63,11 @@ setopt interactivecomments
 export VISUAL=vim
 export EDITOR=vim
 
-# fzf
-. /usr/share/fzf/key-bindings.zsh
-. /usr/share/fzf/completion.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Enter gpg passphrase through terminal shell
 # This is required for signing commits through remote sessions
 export GPG_TTY=$(tty)
-
-# Update when there are no news to indicate that intervention is
-# needed. When there are news, display them.
-safe-update() {
-    TEMP_FILE=$(mktemp)
-    yay -Pw > ${TEMP_FILE}
-    if [ $(wc -l ${TEMP_FILE} | awk '{print $1}') = 0 ]
-    then
-        yay -Syu
-    else
-        cat ${TEMP_FILE}
-    fi
-}
 
 alias exa='exa -la --git --color-scale'
 
