@@ -1,7 +1,8 @@
 # Path to oh-my-zsh installation (arch)
 ZSH=/usr/share/oh-my-zsh/
 
-ZSH_THEME="af-magic"
+ZSH_THEME="agnoster"
+DEFAULT_USER="patatahooligan"
 
 # Completion options
 # CASE_SENSITIVE="true"
