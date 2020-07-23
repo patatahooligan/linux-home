@@ -42,7 +42,7 @@ unsetopt AUTO_CD
 
 # Enable interactive comments. This allows tagging cryptic commands to make them
 # searchable and recongnizable in history.
-unsetopt interactivecomments
+setopt interactivecomments
 
 # Personal settings unrelated to zsh
 export VISUAL=vim
