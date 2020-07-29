@@ -1,7 +1,7 @@
 # Path to oh-my-zsh installation (arch)
 ZSH=/usr/share/oh-my-zsh/
 
-ZSH_THEME="agnoster"
+ZSH_THEME="agnoster-patatahooligan"
 DEFAULT_USER="patatahooligan"
 
 # Completion options
