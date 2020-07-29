@@ -71,6 +71,7 @@
         "format": "{}°C",
         "return-type": "",
         "max-length": 40,
-        "exec": "sensors -A | sed -e 's/([^)]*)//g' | grep -F '°C' | sed -E 's/[^+]*\\+(.*)°C.*/\\1/g' | sort -n | tail -n1"
+        "exec": "sensors -A | sed -e 's/([^)]*)//g' | grep -F '°C' | sed -E 's/[^+]*\\+(.*)°C.*/\\1/g' | sort -n | tail -n1",
+        "on-click": "radeon-profile"
     }
 }
