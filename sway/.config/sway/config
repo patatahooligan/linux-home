@@ -197,10 +197,10 @@ mode "resize" {
 bindsym --to-code $mod+r mode "resize"
 
 # Volume keys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym Shift+XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
-bindsym Shift+XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%-
+bindsym Shift+XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 2%+
+bindsym Shift+XF86AudioLowerVolume exec amixer -q -D pulse sset Master 2%-
 
 # Application keybindings
 bindsym --to-code Ctrl+Alt+b exec firefox --new-window
