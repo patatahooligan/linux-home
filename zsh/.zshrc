@@ -1,5 +1,5 @@
 # Path to oh-my-zsh installation (arch)
-ZSH=/usr/share/oh-my-zsh/
+ZSH=~/.oh-my-zsh/
 
 ZSH_THEME="agnoster-patatahooligan"
 DEFAULT_USER="patatahooligan"
@@ -49,7 +49,7 @@ export VISUAL=vim
 export EDITOR=vim
 
 # fzf
-. /usr/share/fzf/key-bindings.zsh
+. /usr/share/doc/fzf/examples/key-bindings.zsh
 . /usr/share/fzf/completion.zsh
 
 # Enter gpg passphrase through terminal shell
@@ -70,4 +70,3 @@ safe-update() {
 }
 
 alias exa='exa -la --git --color-scale'
-alias ssh="TERM='xterm' ssh"
