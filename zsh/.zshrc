@@ -70,4 +70,4 @@ safe-update() {
 }
 
 alias exa='exa -la --git --color-scale'
-alias ssh="TERM='xterm' ssh"
+alias ssh="TERM='xterm-256color' ssh"
