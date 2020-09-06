@@ -91,3 +91,7 @@ alias exa='exa -la --git --color-scale'
 # I might have to change it in the future.
 alias ssh="TERM='xterm-256color' ssh"
 alias gcloud="TERM='xterm-256color' gcloud"
+
+if [[ $TERM = 'xterm-kitty' ]]; then
+    alias icat='kitty +kitten icat'
+fi
