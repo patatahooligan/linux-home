@@ -70,4 +70,10 @@ safe-update() {
 }
 
 alias exa='exa -la --git --color-scale'
+
+# Set TERM to something generic for which we hope the host machine will have the
+# appropriate terminfo. This is useful because if they don't have the correct
+# terminfo, the terminal bugs out. Maybe this isn't the perfect value for it, so
+# I might have to change it in the future.
 alias ssh="TERM='xterm-256color' ssh"
+alias gcloud="TERM='xterm-256color' gcloud"
