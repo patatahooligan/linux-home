@@ -29,6 +29,20 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history)
 #'systemctl*|'\
 #'journalctl*'
 
+
+if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    # Source zsh-syntax-highlighting only if we are sure our current terminal has
+    # enough colors for it to look normal
+    TERMINAL_COLORS=$(tput colors)
+
+    # Check the exit code because 'colors' might not even exist in the terminfo
+    if [[ $? && $TERMINAL_COLORS -ge 256 ]]; then
+        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+        export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
+    fi
+fi
+
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir -p $ZSH_CACHE_DIR
@@ -70,3 +84,14 @@ safe-update() {
 }
 
 alias exa='exa -la --git --color-scale'
+
+# Set TERM to something generic for which we hope the host machine will have the
+# appropriate terminfo. This is useful because if they don't have the correct
+# terminfo, the terminal bugs out. Maybe this isn't the perfect value for it, so
+# I might have to change it in the future.
+alias ssh="TERM='xterm-256color' ssh"
+alias gcloud="TERM='xterm-256color' gcloud"
+
+if [[ $TERM = 'xterm-kitty' ]]; then
+    alias icat='kitty +kitten icat'
+fi
