@@ -40,6 +40,7 @@ if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
         source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
         export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
+        ZSH_HIGHLIGHT_STYLES[comment]='fg=249'
     fi
 fi
 
