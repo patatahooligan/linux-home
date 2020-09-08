@@ -1,0 +1,12 @@
+OPTIONS=align_message:bottom
+OPTIONS=!autopickup
+OPTIONS=guicolor
+OPTIONS=menucolors
+OPTIONS=perm_invent
+OPTIONS=showexp
+OPTIONS=splash_screen:true
+OPTIONS=standout
+OPTIONS=statuslines=3
+OPTIONS=tiled_map
+OPTIONS=time
+OPTIONS=windowtype:curses
