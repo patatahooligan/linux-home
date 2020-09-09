@@ -30,14 +30,14 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history)
 #'journalctl*'
 
 
-if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+if [[ -e /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
     # Source zsh-syntax-highlighting only if we are sure our current terminal has
     # enough colors for it to look normal
     TERMINAL_COLORS=$(tput colors)
 
     # Check the exit code because 'colors' might not even exist in the terminfo
     if [[ $? && $TERMINAL_COLORS -ge 256 ]]; then
-        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
         export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
         ZSH_HIGHLIGHT_STYLES[comment]='fg=249'
