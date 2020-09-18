@@ -1,3 +1,16 @@
+# Enter gpg passphrase through terminal shell
+# This is required for signing commits through remote sessions
+# It is important that this happens first when using p10k because it appears to
+# perform some magic and tty returns "not a tty" if we don't do it now.
+export GPG_TTY=$(tty)
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to oh-my-zsh installation (arch)
 ZSH=/usr/share/oh-my-zsh/
 
@@ -67,10 +80,6 @@ export EDITOR=vim
 . /usr/share/fzf/key-bindings.zsh
 . /usr/share/fzf/completion.zsh
 
-# Enter gpg passphrase through terminal shell
-# This is required for signing commits through remote sessions
-export GPG_TTY=$(tty)
-
 # Update when there are no news to indicate that intervention is
 # needed. When there are news, display them.
 safe-update() {
@@ -92,3 +101,8 @@ alias gcloud="TERM='xterm-256color' gcloud"
 if [[ $TERM = 'xterm-kitty' ]]; then
     alias icat='kitty +kitten icat'
 fi
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
