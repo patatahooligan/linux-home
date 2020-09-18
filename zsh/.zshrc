@@ -94,12 +94,17 @@ alias exa='exa -la --git --color-scale'
 # Set TERM to something generic for which we hope the host machine will have the
 # appropriate terminfo. This is useful because if they don't have the correct
 # terminfo, the terminal bugs out. Maybe this isn't the perfect value for it, so
-# I might have to change it in the future.
-alias ssh="TERM='xterm-256color' ssh"
+# I might have to change it in the future. Maybe I can set a custom ssh command
+# for gcloud so that I can redirect it to the kitten as below.
 alias gcloud="TERM='xterm-256color' gcloud"
 
 if [[ $TERM = 'xterm-kitty' ]]; then
     alias icat='kitty +kitten icat'
+
+    # This kitten copies over the terminfo to the target system, solving the
+    # same problem that the gcloud alias above exists for, but without
+    # sacrificing functionality this time.
+    alias ssh='kitty +kitten ssh'
 fi
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
