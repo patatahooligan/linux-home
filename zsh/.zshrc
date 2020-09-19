@@ -18,6 +18,10 @@ fi
 autoload -Uz compinit
 compinit
 
+# Enable run-help for internal commands
+unalias run-help
+autoload run-help
+
 # Load autosuggestions if present
 if [[ -e /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
     # Autosuggestions options
