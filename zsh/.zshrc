@@ -105,5 +105,28 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # uses vim bindings instead
 bindkey -e
 
+# Aliases for default settings
+alias grep='grep --color=always --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
+alias less='less -R'
+alias ls='ls --color=auto'
+
+# Keybindings
+bindkey -M emacs "${terminfo[khome]}" beginning-of-line
+bindkey -M emacs "${terminfo[kend]}"  end-of-line
+bindkey -M emacs "${terminfo[kpp]}" up-line-or-history
+bindkey -M emacs "${terminfo[knp]}" down-line-or-history
+bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-beginning-search
+bindkey -M emacs "${terminfo[kcud1]}" down-line-or-beginning-search
+bindkey -M emacs "${terminfo[khome]}" beginning-of-line
+bindkey -M emacs "${terminfo[kend]}"  end-of-line
+bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
+bindkey -M emacs '^?' backward-delete-char
+bindkey -M emacs "${terminfo[kdch1]}" delete-char
+bindkey -M emacs "^[[3~" delete-char
+bindkey -M emacs "^[3;5~" delete-char
+bindkey -M emacs '^[[3;5~' kill-word
+bindkey -M emacs '^[[1;5C' forward-word
+bindkey -M emacs '^[[1;5D' backward-word
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
