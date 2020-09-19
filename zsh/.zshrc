@@ -18,6 +18,10 @@ fi
 autoload -Uz compinit
 compinit
 
+# Set bash-style word boundaries, which means words are only [A-Za-z]*
+autoload -U select-word-style
+select-word-style bash
+
 # Enable run-help for internal commands
 unalias run-help
 autoload run-help
