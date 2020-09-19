@@ -97,7 +97,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 bindkey -e
 
 
-## Aliases for default settings
+## Aliases & functions for default settings
 alias exa='exa -la --git --color-scale'
 alias grep='grep --color=always --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
 alias less='less -R'
@@ -109,6 +109,18 @@ alias ls='ls --color=auto'
 # I might have to change it in the future. Maybe I can set a custom ssh command
 # for gcloud so that I can redirect it to the kitten as below.
 alias gcloud="TERM='xterm-256color' gcloud"
+
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;33m") \
+        LESS_TERMCAP_md=$(printf "\e[1;33m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        man "$@"
+}
 
 
 ## Keybindings
