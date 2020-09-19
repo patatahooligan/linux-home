@@ -11,38 +11,28 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to oh-my-zsh installation (arch)
-ZSH=/usr/share/oh-my-zsh/
-
-ZSH_THEME="agnoster-patatahooligan"
-DEFAULT_USER="patatahooligan"
-
 # Completion options
 # CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
 
-# Disable because I want yay to manage it
-DISABLE_AUTO_UPDATE="true"
+autoload -Uz compinit
+compinit
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+# Load autosuggestions if present
+if [[ -e /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    # Autosuggestions options
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
+    ZSH_AUTOSUGGEST_STRATEGY=(history)
+    #export ZSH_AUTOSUGGEST_COMPLETION_IGNORE=\
+    #'pacman -S*|sudo pacman*|'\
+    #'yay -S*|'\
+    #'man*|'\
+    #'systemctl*|'\
+    #'journalctl*'
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-plugins=(zsh-autosuggestions)
-
-# Autosuggestions options
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
-export ZSH_AUTOSUGGEST_STRATEGY=(history)
-#export ZSH_AUTOSUGGEST_COMPLETION_IGNORE=\
-#'pacman -S*|sudo pacman*|'\
-#'yay -S*|'\
-#'man*|'\
-#'systemctl*|'\
-#'journalctl*'
-
-
+# Load syntax highlighting if present
 if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
     # Source zsh-syntax-highlighting only if we are sure our current terminal has
     # enough colors for it to look normal
@@ -56,17 +46,6 @@ if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
         ZSH_HIGHLIGHT_STYLES[comment]='fg=249'
     fi
 fi
-
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir -p $ZSH_CACHE_DIR
-fi
-
-source $ZSH/oh-my-zsh.sh
-
-# Disable autocd because it often causes me to accidentally change directory,
-# while I never intentionally use it
-unsetopt AUTO_CD
 
 # Enable interactive comments. This allows tagging cryptic commands to make them
 # searchable and recongnizable in history.
@@ -107,7 +86,24 @@ if [[ $TERM = 'xterm-kitty' ]]; then
     alias ssh='kitty +kitten ssh'
 fi
 
+## History file configuration
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=10000
+
+## History command configuration
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt share_history          # share command history data
+
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# Explicitly set emacs keybindings, because zsh checks $EDITOR and $VISUAL and
+# uses vim bindings instead
+bindkey -e
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
