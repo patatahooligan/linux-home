@@ -112,22 +112,38 @@ alias gcloud="TERM='xterm-256color' gcloud"
 
 
 ## Keybindings
-bindkey -M emacs "${terminfo[khome]}" beginning-of-line
-bindkey -M emacs "${terminfo[kend]}"  end-of-line
-bindkey -M emacs "${terminfo[kpp]}" up-line-or-history
-bindkey -M emacs "${terminfo[knp]}" down-line-or-history
-bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-beginning-search
-bindkey -M emacs "${terminfo[kcud1]}" down-line-or-beginning-search
-bindkey -M emacs "${terminfo[khome]}" beginning-of-line
-bindkey -M emacs "${terminfo[kend]}"  end-of-line
-bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
+typeset -g -A key
+
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+[[ -n "${terminfo[khome]}" ]] && bindkey -M emacs "${terminfo[khome]}" beginning-of-line
+[[ -n "${terminfo[kend]}" ]] && bindkey -M emacs "${terminfo[kend]}"  end-of-line
+[[ -n "${terminfo[kpp]}" ]] && bindkey -M emacs "${terminfo[kpp]}" up-line-or-history
+[[ -n "${terminfo[knp]}" ]] && bindkey -M emacs "${terminfo[knp]}" down-line-or-history
+[[ -n "${terminfo[kcuu1]}" ]] && bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-beginning-search
+[[ -n "${terminfo[kcud1]}" ]] && bindkey -M emacs "${terminfo[kcud1]}" down-line-or-beginning-search
+[[ -n "${terminfo[khome]}" ]] && bindkey -M emacs "${terminfo[khome]}" beginning-of-line
+[[ -n "${terminfo[kend]}" ]] && bindkey -M emacs "${terminfo[kend]}"  end-of-line
+[[ -n "${terminfo[kcbt]}" ]] && bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
 bindkey -M emacs '^?' backward-delete-char
-bindkey -M emacs "${terminfo[kdch1]}" delete-char
+[[ -n "${terminfo[kdch1]}" ]] && bindkey -M emacs "${terminfo[kdch1]}" delete-char
 bindkey -M emacs "^[[3~" delete-char
 bindkey -M emacs "^[3;5~" delete-char
 bindkey -M emacs '^[[3;5~' kill-word
 bindkey -M emacs '^[[1;5C' forward-word
 bindkey -M emacs '^[[1;5D' backward-word
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
+	autoload -Uz add-zle-hook-widget
+	function zle_application_mode_start { echoti smkx }
+	function zle_application_mode_stop { echoti rmkx }
+	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
+	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
