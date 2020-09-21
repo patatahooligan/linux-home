@@ -106,10 +106,12 @@ bindkey -e
 
 
 ## Aliases & functions for default settings
+alias bat='bat --pager="less -SR" --wrap=never'
 alias exa='exa -la --git --color-scale'
 alias grep='grep --color=always --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
-alias less='less -R'
+alias less='less -SR'
 alias ls='ls --color=auto'
+
 
 # Set TERM to something generic for which we hope the host machine will have the
 # appropriate terminfo. This is useful because if they don't have the correct
