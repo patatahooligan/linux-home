@@ -158,6 +158,18 @@ man() {
         man "$@"
 }
 
+fzf-vim() {
+    TARGET_FILE="$(fzf --preview='bat -p --color=always {}')"
+    if [ -n "${TARGET_FILE}" ]; then
+        vim -- "${TARGET_FILE}"
+    fi
+}
+
+fzf-grep() {
+    COMMAND="grep --color=always -nC3 $@ -- {}"
+    grep --color=never -lIR "$@" | fzf --preview="${COMMAND}"
+}
+
 
 ## Keybindings
 typeset -g -A key
