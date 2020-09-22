@@ -1,3 +1,8 @@
+let g:molokai_original = 1
+colorscheme molokai
+" Prevent buggy erasing of the background when scrolling
+set t_ut=""
+
 " Set leader key. Do this first to make sure no mappings are registered with
 " the default value.
 let mapleader = " "
@@ -25,7 +30,7 @@ set number relativenumber
 " context I want to have the rest available as well. Should be grey, but maybe
 " that's not true on all pallets. Might have to do some tests and reconsider.
 set colorcolumn=72,80,100,120
-highlight ColorColumn ctermbg=8 guibg=lightgrey
+highlight ColorColumn ctermbg=234 guibg=lightgrey
 
 " Not sure if this should always be on, but try it out for now. The wrapping
 " makes a lot of code I work on unreadable.
