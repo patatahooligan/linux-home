@@ -27,7 +27,7 @@ unalias run-help
 autoload run-help
 
 # Load autosuggestions if present
-if [[ -e /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+if [[ -e ~/devel/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
     # Autosuggestions options
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
     ZSH_AUTOSUGGEST_STRATEGY=(history)
@@ -37,7 +37,7 @@ if [[ -e /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; 
     #'man*|'\
     #'systemctl*|'\
     #'journalctl*'
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source ~/devel/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # Load syntax highlighting if present
