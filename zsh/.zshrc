@@ -15,8 +15,8 @@ fi
 # CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
 
 # Set bash-style word boundaries, which means words are only [A-Za-z]*
 autoload -U select-word-style
