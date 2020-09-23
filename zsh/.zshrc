@@ -168,7 +168,7 @@ fzf-vim() {
 fzf-grep() {
     COMMAND="bat --color=always -- {} |"
     COMMAND+="grep --color=always -C3 $@"
-    grep --color=never -lIR "$@" | fzf --preview="${COMMAND}"
+    grep --color=never -lIR "$@" | fzf --preview-window=up:80% --preview="${COMMAND}"
 }
 
 
