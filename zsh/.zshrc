@@ -15,8 +15,8 @@ fi
 # CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
 
 # Set bash-style word boundaries, which means words are only [A-Za-z]*
 autoload -U select-word-style
@@ -104,7 +104,7 @@ bindkey -e
 
 
 ## Aliases & functions for default settings
-alias bat='bat --pager="less -SR" --wrap=never'
+alias bat='bat --pager="less -FSR" --wrap=never'
 alias exa='exa -la --git --color-scale'
 alias grep='grep --color=always --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
 alias less='less -SR'
@@ -164,8 +164,9 @@ fzf-vim() {
 }
 
 fzf-grep() {
-    COMMAND="grep --color=always -nC3 $@ -- {}"
-    grep --color=never -lIR "$@" | fzf --preview="${COMMAND}"
+    COMMAND="bat --color=always -- {} |"
+    COMMAND+="grep --color=always -C3 $@"
+    grep --color=never -lIR "$@" | fzf --preview-window=up:80% --preview="${COMMAND}"
 }
 
 
