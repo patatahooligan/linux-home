@@ -76,7 +76,7 @@ safe-update() {
     fi
 }
 
-if [[ $TERM = 'xterm-kitty' ]]; then
+if [[ $TERM = 'xterm-kitty' ]] && which kitty > /dev/null; then
     alias icat='kitty +kitten icat'
 
     # This kitten copies over the terminfo to the target system, solving the
