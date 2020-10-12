@@ -63,10 +63,6 @@ setopt interactivecomments
 export VISUAL=vim
 export EDITOR=vim
 
-# fzf
-. /usr/share/fzf/key-bindings.zsh
-. /usr/share/fzf/completion.zsh
-
 # Update when there are no news to indicate that intervention is
 # needed. When there are news, display them.
 safe-update() {
@@ -205,6 +201,10 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
+
+# fzf
+. /usr/share/fzf/key-bindings.zsh
+. /usr/share/fzf/completion.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
