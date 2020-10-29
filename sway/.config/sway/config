@@ -18,12 +18,12 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu wofi --show=run -L5 --location=2 | xargs swaymsg exec --
 
 ### Output configuration
 output DP-3 resolution 1920x1080 position 0,0
 output HDMI-A-1 resolution 1920x1080 position 1920,0
-output * background /var/pictures/pacwall.png center #000000
+output * background /usr/share/backgrounds/archlinux/small.png center #000000
 output * adaptive_sync on
 
 seat seat0 xcursor_theme pArch-24 24

@@ -27,7 +27,7 @@ unalias run-help
 autoload run-help
 
 # Load autosuggestions if present
-if [[ -e /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+if [[ -e ~/devel/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
     # Autosuggestions options
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
     ZSH_AUTOSUGGEST_STRATEGY=(history)
@@ -37,7 +37,7 @@ if [[ -e /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; 
     #'man*|'\
     #'systemctl*|'\
     #'journalctl*'
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source ~/devel/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # Load syntax highlighting if present
@@ -62,10 +62,6 @@ setopt interactivecomments
 # Personal settings unrelated to zsh
 export VISUAL=vim
 export EDITOR=vim
-
-# fzf
-. /usr/share/doc/fzf/examples/key-bindings.zsh
-. /usr/share/fzf/completion.zsh
 
 # Update when there are no news to indicate that intervention is
 # needed. When there are news, display them.
@@ -205,6 +201,9 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
+
+# fzf
+. /usr/share/doc/fzf/examples/key-bindings.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
