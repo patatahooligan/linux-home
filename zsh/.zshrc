@@ -63,15 +63,6 @@ setopt interactivecomments
 export VISUAL=vim
 export EDITOR=vim
 
-# Update when there are no news to indicate that intervention is
-# needed. When there are news, display them.
-safe-update() {
-    if [ $(yay -Pw --color=always | tee /dev/tty | wc -l) = 0 ]
-    then
-        yay -Syu
-    fi
-}
-
 if [[ $TERM = 'xterm-kitty' ]] && which kitty > /dev/null; then
     alias icat='kitty +kitten icat'
 
