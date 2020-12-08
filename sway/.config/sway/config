@@ -18,7 +18,7 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --show=run -L5 --location=2 | xargs swaymsg exec --
+set $menu dmenu_path | wofi -d -L5 --location=2 | xargs swaymsg exec --
 
 ### Output configuration
 output DP-3 resolution 1920x1080 position 0,0
