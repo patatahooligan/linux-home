@@ -17,6 +17,7 @@ fi
 
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
+_comp_options+=(globdots)
 
 # Set bash-style word boundaries, which means words are only [A-Za-z]*
 autoload -U select-word-style
