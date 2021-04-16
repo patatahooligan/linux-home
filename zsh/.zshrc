@@ -70,7 +70,8 @@ if [[ $TERM = 'xterm-kitty' ]] && which kitty > /dev/null; then
     # This kitten copies over the terminfo to the target system, solving the
     # same problem that the gcloud alias above exists for, but without
     # sacrificing functionality this time.
-    alias ssh='kitty +kitten ssh'
+    alias kitty-ssh='kitty +kitten ssh'
+    alias ssh="TERM='xterm-256color' ssh"
 fi
 
 ## History file configuration
