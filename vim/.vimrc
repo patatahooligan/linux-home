@@ -48,6 +48,6 @@ set laststatus=2
 " it fully off for now and potentially change it later.
 set mouse=
 
-" Highlight (usually) unwanted whitespace, such as trailing spaces
-:highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-:match ExtraWhitespace /\s\+\%#\@<!$/
+" Highlight potentially unwanted characters such as tabs and trailing spaces
+:set listchars=tab:\ ->,trail:·,extends:>,precedes:<
+:set list
