@@ -199,6 +199,7 @@ bindsym --to-code $mod+r mode "resize"
 # Volume keys
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%-
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 bindsym Shift+XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 2%+
 bindsym Shift+XF86AudioLowerVolume exec amixer -q -D pulse sset Master 2%-
 
