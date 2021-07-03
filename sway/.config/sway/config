@@ -226,6 +226,12 @@ input * {
     xkb_options "grp:win_space_toggle"
 }
 
+input type:pointer {
+    accel_profile flat
+    pointer_accel -0.3
+    scroll_factor 3
+}
+
 set $cl_high #402090
 set $cl_indi #d9d8d8
 set $cl_back #231f20
