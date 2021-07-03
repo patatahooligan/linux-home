@@ -22,3 +22,7 @@
 	ff = only
 [merge]
 	tool = vimdiff
+[credential]
+	helper = store
+[receive]
+	denyCurrentBranch = updateInstead
