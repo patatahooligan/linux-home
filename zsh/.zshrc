@@ -61,8 +61,8 @@ fi
 setopt interactivecomments
 
 # Personal settings unrelated to zsh
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
 
 if [[ $TERM = 'xterm-kitty' ]] && which kitty > /dev/null; then
     alias icat='kitty +kitten icat'
@@ -151,7 +151,7 @@ man() {
 fzf-vim() {
     TARGET_FILE="$(fzf --preview='bat -p --color=always {}')"
     if [ -n "${TARGET_FILE}" ]; then
-        vim -- "${TARGET_FILE}"
+        nvim -- "${TARGET_FILE}"
     fi
 }
 
