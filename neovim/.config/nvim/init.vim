@@ -1,7 +1,5 @@
 let g:molokai_original = 1
 colorscheme molokai
-" Prevent buggy erasing of the background when scrolling
-set t_ut=""
 
 " Set leader key. Do this first to make sure no mappings are registered with
 " the default value.
