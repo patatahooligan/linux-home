@@ -45,9 +45,4 @@ set mouse=
 :set listchars=tab:\ ->,trail:·,extends:>,precedes:<
 :set list
 
-" Enable rust analyzer
-lua << EOF
-require'lspconfig'.rust_analyzer.setup{}
-local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-EOF
+execute 'source' . stdpath('config') . '/lsp.lua'
