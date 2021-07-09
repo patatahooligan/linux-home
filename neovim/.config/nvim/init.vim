@@ -1,3 +1,18 @@
+" Enable rulers at 72, 80, 100, 120 characters
+" Most of the time I use a width of 80 characters, but depending on the
+" context I want to have the rest available as well. Should be grey, but maybe
+" that's not true on all pallets. Might have to do some tests and reconsider.
+set colorcolumn=72,80,100,120
+
+" It seems that neovim exhibits slightly different behavior to vim regarding
+" colorschemes. If you set a colorscheme, trying to set other highlight
+" properties fails. I'm guessing it's some sort of priority system. This
+" command essentially sets a hook that sets the highlight color everytime you
+" load a colorscheme, and this successfully overrides the colorscheme. Since I
+" don't unset the autocmd, it should mean that the rulers remain the same
+" color even if a load another colorscheme
+autocmd ColorScheme * highlight ColorColumn ctermbg=black guibg=black
+
 let g:molokai_original = 1
 colorscheme molokai
 
@@ -17,13 +32,6 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 " use as a reference, but the rest get relative numbers to assist in
 " navigation.
 set number relativenumber
-
-" Enable rulers at 72, 80, 100, 120 characters
-" Most of the time I use a width of 80 characters, but depending on the
-" context I want to have the rest available as well. Should be grey, but maybe
-" that's not true on all pallets. Might have to do some tests and reconsider.
-set colorcolumn=72,80,100,120
-highlight ColorColumn ctermbg=234 guibg=lightgrey
 
 " Not sure if this should always be on, but try it out for now. The wrapping
 " makes a lot of code I work on unreadable.
