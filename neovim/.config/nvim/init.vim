@@ -10,8 +10,10 @@ set colorcolumn=72,80,100,120
 " command essentially sets a hook that sets the highlight color everytime you
 " load a colorscheme, and this successfully overrides the colorscheme. Since I
 " don't unset the autocmd, it should mean that the rulers remain the same
-" color even if a load another colorscheme
-autocmd ColorScheme * highlight ColorColumn ctermbg=black guibg=black
+" color even if a load another colorscheme. I haven't really tried the gui
+" color (I don't use one). I picked one that is probably close and I'll adjust
+" it if it ever becomes relevant.
+autocmd ColorScheme * highlight ColorColumn ctermbg=235 guibg=darkgrey
 
 let g:molokai_original = 1
 colorscheme molokai
