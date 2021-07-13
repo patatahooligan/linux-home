@@ -130,6 +130,7 @@ LS_COLORS+='*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
 export LS_COLORS
 
 export MANWIDTH=80
+export CMAKE_EXPORT_COMPILE_COMMANDS=true
 
 # Set TERM to something generic for which we hope the host machine will have the
 # appropriate terminfo. This is useful because if they don't have the correct
