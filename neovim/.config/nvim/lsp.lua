@@ -1,6 +1,12 @@
+-- Set up language servers and keybindings for LSP. To add more languages you
+-- only need to edit the local servers variable near the end with the
+-- appropriate name. The list of supported servers and their name for the array
+-- can always be found in the project's page:
+--     https://github.com/neovim/nvim-lspconfig
+
 local nvim_lsp = require('lspconfig')
 
--- Use an on_attach function to only map the following keys 
+-- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
