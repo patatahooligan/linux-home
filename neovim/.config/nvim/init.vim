@@ -14,6 +14,7 @@ set colorcolumn=72,80,100,120
 " color (I don't use one). I picked one that is probably close and I'll adjust
 " it if it ever becomes relevant.
 autocmd ColorScheme * highlight ColorColumn ctermbg=235 guibg=darkgrey
+autocmd ColorScheme * highlight Whitespace ctermfg=8
 
 let g:molokai_original = 1
 colorscheme molokai
