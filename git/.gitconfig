@@ -28,3 +28,5 @@
 	denyCurrentBranch = updateInstead
 [init]
 	defaultBranch = main
+[checkout]
+	defaultRemote = origin
