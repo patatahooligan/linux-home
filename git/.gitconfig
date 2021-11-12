@@ -31,3 +31,5 @@
 	defaultBranch = main
 [checkout]
 	defaultRemote = origin
+[advice]
+	detachedHead = false
