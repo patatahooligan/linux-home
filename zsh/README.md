@@ -1,6 +1,9 @@
 # zsh
 
-This .zshrc expects (but will kinda work without):
+This config assumes the following packages:
 
-* oh-my-zsh
-* fzf
+ - zsh
+ - zsh-autosuggestions
+ - zsh-completions
+ - zsh-syntax-highlighting
+ - zsh-theme-powerlevel10k-git
