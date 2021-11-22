@@ -66,5 +66,6 @@ set mouse=
 
 execute 'source' . stdpath('config') . '/lsp.lua'
 
-set completeopt=menuone,noselect
-execute 'source' . stdpath('config') . '/compe.lua'
+lua << EOF
+require('orgmode').setup({})
+EOF
