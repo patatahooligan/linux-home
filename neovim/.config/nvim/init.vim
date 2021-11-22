@@ -1,3 +1,5 @@
+set termguicolors
+
 " Enable rulers at 72, 80, 100, 120 characters Most of the time I use a
 " width of 80 characters, but depending on the context I want to have
 " the rest available as well. Should be grey, but maybe that's not true
@@ -14,8 +16,8 @@ set colorcolumn=72,80,100,120
 " colorscheme. I haven't really tried the gui color (I don't use one). I
 " picked one that is probably close and I'll adjust it if it ever
 " becomes relevant.
-autocmd ColorScheme * highlight ColorColumn ctermbg=235 guibg=darkgrey
-autocmd ColorScheme * highlight Whitespace ctermfg=8
+autocmd ColorScheme * highlight ColorColumn ctermbg=235 guibg=#303030
+autocmd ColorScheme * highlight Whitespace ctermfg=8 guifg=#75715E
 autocmd ColorScheme * highlight NonText ctermfg=3
 
 let g:molokai_original = 1
