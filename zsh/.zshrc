@@ -67,11 +67,20 @@ export EDITOR=nvim
 if [[ $TERM = 'xterm-kitty' ]] && which kitty > /dev/null; then
     alias icat='kitty +kitten icat'
 
-    # This kitten copies over the terminfo to the target system, solving the
-    # same problem that the gcloud alias above exists for, but without
-    # sacrificing functionality this time.
+    # Most of the time, there is no kitty terminfo on the systems I'm
+    # ssh'ing into. There are two ways to solve this, one is to copy
+    # over the terminfo in question, which is what `kitty-ssh` does, and
+    # the other is to set a generic terminfo that offers a subset of
+    # kitty's features. This keeps the session from breaking, but it
+    # also possibly misses out on functionality. It's usefulness is
+    # mostly in cases where's its possible to have nested ssh sessions,
+    # in which case the kitty-ssh command won't be available. Same deal
+    # for glcoud. Remember that you can always run /usr/bin/ssh
+    # explicitly to bypass these aliases if they are ever unwanted for
+    # some reason.
     alias kitty-ssh='kitty +kitten ssh'
     alias ssh="TERM='xterm-256color' ssh"
+    alias gcloud="TERM='xterm-256color' gcloud"
 fi
 
 ## History file configuration
@@ -131,13 +140,6 @@ export LS_COLORS
 
 export MANWIDTH=80
 export CMAKE_EXPORT_COMPILE_COMMANDS=true
-
-# Set TERM to something generic for which we hope the host machine will have the
-# appropriate terminfo. This is useful because if they don't have the correct
-# terminfo, the terminal bugs out. Maybe this isn't the perfect value for it, so
-# I might have to change it in the future. Maybe I can set a custom ssh command
-# for gcloud so that I can redirect it to the kitten as below.
-alias gcloud="TERM='xterm-256color' gcloud"
 
 man() {
     env \

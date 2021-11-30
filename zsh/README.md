@@ -11,3 +11,7 @@ This config assumes the following packages:
 It also requires a patched nerd font. If one is not available, you will
 probably want to reconfigure powerlevel10k to not use the glyphs from
 the nerd font.
+
+# TODO
+
+ - Don't enable features that the current terminal does not support.
