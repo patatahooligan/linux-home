@@ -19,6 +19,9 @@ set colorcolumn=72,80,100,120
 autocmd ColorScheme * highlight ColorColumn ctermbg=235 guibg=#303030
 autocmd ColorScheme * highlight Whitespace ctermfg=8 guifg=#75715E
 autocmd ColorScheme * highlight NonText ctermfg=3
+autocmd ColorScheme * highlight LineNr ctermfg=250 ctermbg=234 guifg=#BCBC00 guibg=#3B3A32
+autocmd ColorScheme * highlight LineNrAbove ctermfg=250 ctermbg=234 guifg=#BCBCBC guibg=#3B3A32
+autocmd ColorScheme * highlight link LineNrBelow LineNrAbove
 
 let g:molokai_original = 1
 colorscheme molokai
