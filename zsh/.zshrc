@@ -166,6 +166,10 @@ fzf-grep() {
     grep --color=never -lIR "$@" | fzf --preview-window=up:80% --preview="${COMMAND}"
 }
 
+rgd() {
+    rg --json "$@" | delta
+}
+
 
 ## Keybindings
 typeset -g -A key
