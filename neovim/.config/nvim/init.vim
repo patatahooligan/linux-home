@@ -23,6 +23,11 @@ autocmd ColorScheme * highlight LineNr ctermfg=250 ctermbg=234 guifg=#BCBC00 gui
 autocmd ColorScheme * highlight LineNrAbove ctermfg=250 ctermbg=234 guifg=#BCBCBC guibg=#3B3A32
 autocmd ColorScheme * highlight link LineNrBelow LineNrAbove
 
+" "Restore" the cursor style. neovim has no way to know what state it's
+" supposed to leave it in. If I change what I set it to in the terminal
+" configuration, this has to also be changed to reflect it...
+au VimLeave,VimSuspend * set guicursor=a:ver100-blinkon0
+
 let g:molokai_original = 1
 colorscheme molokai
 
