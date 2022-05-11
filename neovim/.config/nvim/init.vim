@@ -72,6 +72,12 @@ set mouse=
 :set listchars=tab:\ ->,trail:·,extends:>,precedes:<
 :set list
 
+" Reduce update time. Apparently this can affect the update time of
+" plugins as well, like gitgutter, so we need it to be relatively low.
+" But at the same time it affects drive I/O (swap file saving) so let's
+" not go too low.
+set updatetime=500
+
 execute 'source' . stdpath('config') . '/lsp.lua'
 
 lua << EOF
