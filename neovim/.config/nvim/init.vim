@@ -79,7 +79,3 @@ set mouse=
 set updatetime=500
 
 execute 'source' . stdpath('config') . '/lsp.lua'
-
-lua << EOF
-require('orgmode').setup({})
-EOF
