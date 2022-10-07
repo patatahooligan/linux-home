@@ -206,7 +206,7 @@ bindsym Shift+XF86AudioLowerVolume exec amixer -q -D pulse sset Master 2%-
 # Application keybindings
 bindsym --to-code Ctrl+Alt+b exec firefox --new-window
 bindsym --to-code Ctrl+Alt+s exec steam
-bindsym --to-code Ctrl+Alt+f exec thunar
+bindsym --to-code Ctrl+Alt+f exec nautilus
 
 #
 # Status Bar:
