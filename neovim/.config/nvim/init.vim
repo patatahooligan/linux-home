@@ -79,3 +79,12 @@ set mouse=
 set updatetime=500
 
 execute 'source' . stdpath('config') . '/lsp.lua'
+
+" Experimental configuration for neovide
+set guifont=FiraCode\ Nerd\ Font:h14
+if exists("g:neovide")
+    " TODO: figure out if I can get this to match to the monitor somehow
+    let g:neovide_refresh_rate = 144
+    let g:neovide_cursor_animation_length=0.03
+    let g:neovide_hide_mouse_when_typing = v:true
+endif
