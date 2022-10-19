@@ -88,3 +88,6 @@ if exists("g:neovide")
     let g:neovide_cursor_animation_length=0.03
     let g:neovide_hide_mouse_when_typing = v:true
 endif
+
+" For cppfront/cpp2. Hopefully it will someday be the default
+au BufRead,BufNewFile *.cpp2 set syntax=cpp
