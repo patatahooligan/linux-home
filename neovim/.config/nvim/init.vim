@@ -91,3 +91,5 @@ endif
 
 " For cppfront/cpp2. Hopefully it will someday be the default
 au BufRead,BufNewFile *.cpp2 set syntax=cpp
+
+execute 'source' . stdpath('config') . '/plugins.vim'
