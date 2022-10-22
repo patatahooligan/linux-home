@@ -78,7 +78,9 @@ set mouse=
 " not go too low.
 set updatetime=500
 
-execute 'source' . stdpath('config') . '/lsp.lua'
+" Temporarily disable built-in lsp while trying out CoC. It probably
+" makes sense to end up using only one of them.
+" execute 'source' . stdpath('config') . '/lsp.lua'
 
 " Experimental configuration for neovide
 set guifont=FiraCode\ Nerd\ Font:h14
