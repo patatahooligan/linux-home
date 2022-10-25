@@ -16,5 +16,6 @@ let g:coc_global_extensions = [
             \ 'coc-markdown-preview-enhanced',
             \ 'coc-pyright',
             \ 'coc-rust-analyzer',
+            \ 'coc-tsserver',
             \ 'coc-webview'
             \ ]
