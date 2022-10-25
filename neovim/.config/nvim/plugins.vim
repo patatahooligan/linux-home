@@ -19,3 +19,5 @@ let g:coc_global_extensions = [
             \ 'coc-tsserver',
             \ 'coc-webview'
             \ ]
+
+execute 'source' . stdpath('config') . '/coc-config.vim'
