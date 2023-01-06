@@ -95,3 +95,4 @@ endif
 au BufRead,BufNewFile *.cpp2 set syntax=cpp
 
 execute 'source' . stdpath('config') . '/plugins.vim'
+execute 'source' . stdpath('config') . '/orgmode.lua'

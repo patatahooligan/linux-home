@@ -5,6 +5,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-orgmode/orgmode'
+
 call plug#end()
 
 let g:coc_global_extensions = [
