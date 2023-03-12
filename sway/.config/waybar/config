@@ -63,7 +63,7 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-        "on-click-right": "pulseeffects"
+        "on-click-right": "easyeffects"
     },
 
     "custom/temperature": {
