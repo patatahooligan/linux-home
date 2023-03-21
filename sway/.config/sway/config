@@ -207,6 +207,7 @@ bindsym Shift+XF86AudioLowerVolume exec amixer -q -D pulse sset Master 2%-
 bindsym --to-code Ctrl+Alt+b exec firefox --new-window
 bindsym --to-code Ctrl+Alt+s exec steam
 bindsym --to-code Ctrl+Alt+f exec nautilus
+bindsym --to-code Ctrl+Alt+l exec swaylock
 
 #
 # Status Bar:
