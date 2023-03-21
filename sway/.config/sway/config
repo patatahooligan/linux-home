@@ -232,6 +232,10 @@ input type:pointer {
     scroll_factor 3
 }
 
+input type:touchpad {
+    natural_scroll enabled
+}
+
 set $cl_high #402090
 set $cl_indi #d9d8d8
 set $cl_back #231f20
