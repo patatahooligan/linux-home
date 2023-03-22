@@ -16,8 +16,6 @@
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
-[credential]
-	helper = store
 [receive]
 	denyCurrentBranch = updateInstead
 [init]
