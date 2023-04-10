@@ -113,7 +113,19 @@ alias grep='grep --color=always --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox
 alias less='less -SR'
 alias ls='ls --color=auto'
 alias ip='ip --color=auto'
-alias nvide='WINIT_UNIX_BACKEND=x11 neovide --multigrid'
+
+# Ugly workaround for known issue with neovide. Without this neovide
+# doesn't launch in wayland. In xwayland, neovide sometimes doesn't
+# catch keystrokes after switching to different workspaces and back in
+# sway. The workaround is to launch `cage`, a kiosk wayland compositor
+# and run neovide in it. This can be reverted when the upstream fix
+# arrives.
+#
+# Relevant upstream issue:
+# https://github.com/neovide/neovide/issues/1356
+function nvide {
+    cage -- neovide --multigrid "$@" &> /dev/null &
+}
 
 alias ggrep='git grep -nC3'
 
