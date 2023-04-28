@@ -21,10 +21,14 @@ set $term foot
 set $menu dmenu_path | wofi -d -L5 --location=2 | xargs swaymsg exec --
 
 ### Output configuration
-output DP-3 resolution 1920x1080 position 0,0
-output HDMI-A-1 resolution 1920x1080 position 1920,0
+output DP-3 resolution 2560x1440 position 0,0
+output DP-2 resolution 1920x1080 position 2560,0
 output * background /usr/share/backgrounds/archlinux/split.png fit #000000
 output * adaptive_sync on
+output * max_render_time off
+
+workspace 1 output DP-3
+workspace 2 output DP-2
 
 seat seat0 xcursor_theme pArch-32 32
 
