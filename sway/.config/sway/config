@@ -253,6 +253,9 @@ client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
 client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
 client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 
+# Required for xdg-desktop-portal-wlr to work. See also
+# https://wiki.archlinux.org/title/XDG_Desktop_Portal#xdg-desktop-portal-wlr_does_not_start_automatically_on_sway
+exec dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway
 include /etc/sway/config.d/*
 
 font Fira Code Medium 12
