@@ -2,10 +2,14 @@
     "layer": "top",
     "height": 30,
 
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+    "modules-left": ["sway/workspaces", "wlr/workspaces", "sway/mode", "custom/media"],
     "modules-right": [
-        "sway/language","pulseaudio", "cpu", "memory", "temperature",
+        "sway/language","hyprland/language","pulseaudio", "cpu", "memory", "temperature",
         "custom/temperature", "clock", "tray"],
+
+    "wlr/workspaces": {
+        "on-click": "activate",
+    },
 
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
