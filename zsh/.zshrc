@@ -113,19 +113,7 @@ alias grep='grep --color=always --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox
 alias less='less -SR'
 alias ls='ls --color=auto'
 alias ip='ip --color=auto'
-
-# Ugly workaround for known issue with neovide. Without this neovide
-# doesn't launch in wayland. In xwayland, neovide sometimes doesn't
-# catch keystrokes after switching to different workspaces and back in
-# sway. The workaround is to launch `cage`, a kiosk wayland compositor
-# and run neovide in it. This can be reverted when the upstream fix
-# arrives.
-#
-# Relevant upstream issue:
-# https://github.com/neovide/neovide/issues/1356
-function nvide {
-    cage -- neovide --multigrid "$@" &> /dev/null &
-}
+alias nvide='neovide --multigrid'
 
 alias ggrep='git grep -nC3'
 alias gsed='git --no-pager grep -z --full-name -l "." | xargs -0 sed -i'
