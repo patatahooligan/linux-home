@@ -259,6 +259,3 @@ exec dbus-update-activation-environment --systemd XDG_CURRENT_DESKTOP=sway
 include /etc/sway/config.d/*
 
 font Fira Code Medium 12
-
-# Start graphical polkit agent for privilege escalation prompts
-exec systemctl --user start plasma-polkit-agent.service
