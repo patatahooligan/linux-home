@@ -118,6 +118,13 @@ alias nvide='neovide --multigrid'
 alias ggrep='git grep -nC3'
 alias gsed='git --no-pager grep -z --full-name -l "." | xargs -0 sed -i'
 
+alias man='batman'
+
+alias bathelp='bat --plain --language=help'
+help() {
+    "$@" --help 2>&1 | bathelp
+}
+
 LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:'
 LS_COLORS+='cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:'
 LS_COLORS+='ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:'
@@ -147,18 +154,6 @@ export LS_COLORS
 
 export MANWIDTH=80
 export CMAKE_EXPORT_COMPILE_COMMANDS=true
-
-man() {
-    env \
-        LESS_TERMCAP_mb=$(printf "\e[1;33m") \
-        LESS_TERMCAP_md=$(printf "\e[1;33m") \
-        LESS_TERMCAP_me=$(printf "\e[0m") \
-        LESS_TERMCAP_se=$(printf "\e[0m") \
-        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-        LESS_TERMCAP_ue=$(printf "\e[0m") \
-        LESS_TERMCAP_us=$(printf "\e[1;32m") \
-        man "$@"
-}
 
 fzf-vim() {
     TARGET_FILE="$(fzf --preview='bat -p --color=always {}')"
