@@ -118,12 +118,20 @@ alias nvide='neovide --multigrid'
 alias ggrep='git grep -nC3'
 alias gsed='git --no-pager grep -z --full-name -l "." | xargs -0 sed -i'
 
+# Batman does not seem to provide a completion function. We can reuse
+# `man`'s. It doesn't matter much if they don't have the same options, I
+# just want to be able to autocomplete man page names.
+compdef batman=man
 alias man='batman'
 
+# Define `help` which runs `<command> --help` and colors the output with
+# bat.
 alias bathelp='bat --plain --language=help'
 help() {
     "$@" --help 2>&1 | bathelp
 }
+# Use all executables in $PATH as the autocomplete options.
+compdef _path_commands help
 
 LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:'
 LS_COLORS+='cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:'
