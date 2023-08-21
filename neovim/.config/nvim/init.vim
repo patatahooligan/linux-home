@@ -78,15 +78,14 @@ set mouse=
 " not go too low.
 set updatetime=500
 
-" Temporarily disable built-in lsp while trying out CoC. It probably
-" makes sense to end up using only one of them.
-" execute 'source' . stdpath('config') . '/lsp.lua'
+" Use lsp only for languages not supported by CoC.
+execute 'source' . stdpath('config') . '/lsp.lua'
 
 " Experimental configuration for neovide
-set guifont=FiraCode\ Nerd\ Font:h14
+set guifont=FiraCode\ Nerd\ Font:h16
 if exists("g:neovide")
     " TODO: figure out if I can get this to match to the monitor somehow
-    let g:neovide_refresh_rate = 144
+    let g:neovide_refresh_rate = 240
     let g:neovide_cursor_animation_length=0.03
     let g:neovide_hide_mouse_when_typing = v:true
 endif
