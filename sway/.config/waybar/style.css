@@ -57,11 +57,6 @@ window#waybar.chromium {
     border-bottom: 3px solid #ffffff;
 }
 
-#workspaces button.active {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
