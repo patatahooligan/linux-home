@@ -4,7 +4,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-right": [
-        "sway/language","pulseaudio", "cpu", "memory", "temperature",
+        "sway/language","pulseaudio", "cpu", "memory",
         "custom/temperature", "clock", "tray"],
 
     "sway/mode": {
