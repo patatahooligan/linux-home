@@ -222,7 +222,8 @@ bar {
 }
 
 # Enable gaps
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 5
+title_align center
 gaps inner 5
 
 # Set keyboard inputs
@@ -242,7 +243,7 @@ input type:touchpad {
 }
 
 set $cl_high #402090
-set $cl_indi #d9d8d8
+set $cl_indi #8040ff
 set $cl_back #231f20
 set $cl_fore #d9d8d8
 set $cl_urge #ee2e24
