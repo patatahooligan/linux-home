@@ -82,7 +82,7 @@ set updatetime=500
 execute 'source' . stdpath('config') . '/lsp.lua'
 
 " Experimental configuration for neovide
-set guifont=FiraCode\ Nerd\ Font:h16
+set guifont=CommitMono\ Nerd\ Font:h16
 if exists("g:neovide")
     " TODO: figure out if I can get this to match to the monitor somehow
     let g:neovide_refresh_rate = 240
