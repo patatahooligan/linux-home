@@ -1,5 +1,7 @@
 [include]
 	path = .gitconfig-personal
+[includeIf "gitdir:~/devel/grnet/"]
+    path = ~/devel/grnet/.gitconfig-grnet
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore
