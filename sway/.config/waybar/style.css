@@ -2,9 +2,9 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Fira Code;
+    font-family: CommitMono Nerd Font;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 21;
     min-height: 25px;
 }
 
@@ -45,15 +45,17 @@ window#waybar.chromium {
     border-bottom: 3px solid transparent;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inherit;
+#workspaces button.focused {
+    background-color: #64727D;
     border-bottom: 3px solid #ffffff;
 }
 
-#workspaces button.focused {
-    background-color: #64727D;
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    background-color: #96abbb;
+    box-shadow: inherit;
     border-bottom: 3px solid #ffffff;
 }
 
@@ -80,13 +82,24 @@ window#waybar.chromium {
 #tray,
 #mode,
 #idle_inhibitor,
+#language,
 #mpd {
     padding: 0 10px;
     margin: 0 2px;
-    color: #ffffff;
-    border-radius: 13px;
+    /* To get perfectly circular corners without complicating the math,
+     * we can just request a size that is definitely larger than the
+     * elements it affects. The size will be "clipped" by the smaller of
+     * the two dimensions. This results in the smaller sides becoming
+     * perfect semicircles and the other sides becoming straight lines
+     * between the semicircles. Something like `100vmax` seemed more
+     * appropriate but apparently it is not supported by waybar. */
+    border-radius: 1000px;
 }
 
+#language {
+    background-color: #64727D;
+    min-width: 40px;
+}
 #clock {
     background-color: #64727D;
 }
@@ -125,10 +138,12 @@ label:focus {
 #cpu {
     background-color: #2ecc71;
     color: #000000;
+    min-width: 100px;
 }
 
 #memory {
     background-color: #9b59b6;
+    min-width: 100px;
 }
 
 #backlight {
@@ -147,6 +162,7 @@ label:focus {
 #pulseaudio {
     background-color: #f1c40f;
     color: #000000;
+    min-width: 80px;
 }
 
 #pulseaudio.muted {
@@ -162,6 +178,7 @@ label:focus {
 
 #custom-temperature {
     background-color: #f0932b;
+    min-width: 100px;
 }
 
 #temperature {
