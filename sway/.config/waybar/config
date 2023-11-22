@@ -3,9 +3,10 @@
     "height": 30,
 
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+    "modules-center": ["tray"],
     "modules-right": [
-        "sway/language","pulseaudio", "cpu", "memory",
-        "custom/temperature", "clock", "tray"],
+        "sway/language","wireplumber",
+        "custom/temperature", "clock"],
 
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -49,7 +50,7 @@
         "format-icons": ["", "", ""]
     },
 
-    "pulseaudio": {
+    "wireplumber": {
         "scroll-step": 2,
         "format": "{volume}% {icon}",
         "format-muted": " {format_source}",
