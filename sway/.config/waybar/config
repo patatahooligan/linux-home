@@ -26,8 +26,14 @@
     },
 
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:<big>%H:%M</big> %Y-%m-%d}"
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format": "{:%Y-%m-%d %H:%M}",
+        "format-alt": "{:%H:%M}",
+        "calendar": {
+            "format": {
+                "today": "<span color='#FFFF00'><b><u>{}</u></b></span>"
+            }
+        }
     },
 
     "cpu": {

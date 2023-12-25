@@ -3,7 +3,6 @@
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: CommitMono Nerd Font;
-    font-weight: bold;
     font-size: 21;
     min-height: 25px;
 }
@@ -94,13 +93,19 @@ window#waybar.chromium {
      * between the semicircles. Something like `100vmax` seemed more
      * appropriate but apparently it is not supported by waybar. */
     border-radius: 1000px;
+    font-weight: bold;
 }
 
 #language {
     background-color: #64727D;
     min-width: 40px;
 }
+
 #clock {
+    background-color: #64727D;
+}
+
+tooltip {
     background-color: #64727D;
 }
 
