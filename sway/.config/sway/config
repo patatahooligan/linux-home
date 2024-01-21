@@ -242,6 +242,8 @@ input type:touchpad {
     natural_scroll enabled
 }
 
+input type:keyboard xkb_numlock enabled
+
 set $cl_high #402090
 set $cl_indi #8040ff
 set $cl_back #231f20
