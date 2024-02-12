@@ -207,6 +207,10 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
 bindsym Shift+XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 2%+
 bindsym Shift+XF86AudioLowerVolume exec amixer -q -D pulse sset Master 2%-
 
+# Screen brightness control
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+
 # Application keybindings
 bindsym --to-code Ctrl+Alt+b exec firefox --new-window
 bindsym --to-code Ctrl+Alt+s exec steam
