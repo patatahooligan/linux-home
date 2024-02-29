@@ -109,7 +109,7 @@ bindkey -e
 ## Aliases & functions for default settings
 alias bat='bat --pager="less -FSR" --wrap=never'
 alias eza='eza -la --git --color-scale all'
-alias grep='grep --color=always --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
 alias less='less -SR'
 alias ls='ls --color=auto'
 alias ip='ip --color=auto'
