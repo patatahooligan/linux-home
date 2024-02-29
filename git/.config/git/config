@@ -1,10 +1,10 @@
 [include]
-	path = .gitconfig-personal
+	path = ~/.config/git/personal
 [includeIf "gitdir:~/devel/grnet/"]
     path = ~/devel/grnet/.gitconfig-grnet
 [core]
 	editor = nvim
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/ignore
 	pager = delta
 [interactive]
 	diffFilter = delta --color-only
