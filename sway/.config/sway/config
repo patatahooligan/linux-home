@@ -22,7 +22,13 @@ set $menu dmenu_path | wofi -d -L5 --location=2 | xargs swaymsg exec --
 
 ### Output configuration
 output DP-2 resolution 2560x1440 position 0,0
-output DP-3 resolution 1920x1080 position 2560,0
+# Lower the 2nd monitor refresh rate to 100Hz. This is because of an AMD
+# GPU bug (?) which causes high idle power draw. Apparently having
+# multiple high refresh rate monitors causes the card to idle at a
+# higher frequency and use significantly more power. With the monitor's
+# max refresh rate of 144Hz we consume ~50Watts. With 100Hz we consume
+# ~10watts.
+output DP-3 resolution 1920x1080@100Hz position 2560,0
 output * background /usr/share/backgrounds/archlinux/split.png fit #000000
 output * adaptive_sync on
 output * max_render_time off
