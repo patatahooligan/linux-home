@@ -33,3 +33,5 @@
 	smudge = git-lfs smudge -- %f
 [safe]
 	directory = /sysadmin/linux-system-confs
+[rerere]
+	enabled = true
