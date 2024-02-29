@@ -2,13 +2,16 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: CommitMono Nerd Font;
+    font-family: Noto Sans;
     font-size: 21;
     min-height: 25px;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
+    /* We'd actually like a blurred background effect, but that's not
+     * available currently. A very low transparency with a color that
+     * matches the background kinda works. */
+    background-color: rgba(50, 40, 60, 0.97);
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
@@ -40,22 +43,23 @@ window#waybar.chromium {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #ffb040;
     border-bottom: 3px solid transparent;
+    font-weight: bold;
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    background-color: #604080;
+    border-bottom: 3px solid #ffb040;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
     color: #ffffff;
-    background-color: #96abbb;
+    background-color: #a090c0;
     box-shadow: inherit;
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 3px solid #ffc080;
 }
 
 #workspaces button.urgent {
