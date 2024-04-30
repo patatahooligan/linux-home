@@ -21,7 +21,7 @@ set $term foot
 set $menu dmenu_path | wofi -d -L5 --location=2 | xargs swaymsg exec --
 
 ### Output configuration
-output DP-2 resolution 2560x1440 position 0,0
+output DP-2 resolution 2560x1440 position 0,300
 # Lower the 2nd monitor refresh rate to 100Hz. This is because of an AMD
 # GPU bug (?) which causes high idle power draw. Apparently having
 # multiple high refresh rate monitors causes the card to idle at a
@@ -29,10 +29,12 @@ output DP-2 resolution 2560x1440 position 0,0
 # max refresh rate of 144Hz we consume ~50Watts. With 100Hz we consume
 # ~10watts.
 output DP-3 resolution 1920x1080@100Hz position 2560,0
+output DP-3 transform 270
 # Originally downloaded from
 # https://cdna.artstation.com/p/assets/images/images/012/086/010/large/mikael-gustafsson-amongtrees-2-8.jpg?1532971442
 # Not included in the repo because of unclear copyright situation
 output * background /home/patatahooligan/Downloads/mikael-gustafsson-amongtrees-2-8.jpg fit #000000
+output DP-3 background /home/patatahooligan/Downloads/mikael-gustafsson-amongtrees-2-8.jpg center #000000
 output * adaptive_sync on
 output * max_render_time off
 
