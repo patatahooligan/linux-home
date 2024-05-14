@@ -117,6 +117,13 @@ alias ip='ip --color=auto'
 alias ggrep='git grep -nC3'
 alias gsed='git --no-pager grep -z --full-name -l "." | xargs -0 sed -i'
 
+# Running docker commands with the docker system service is equivalent
+# to root access. By extension, adding our user to the docker group
+# (allows interacting with the docker daemon) is equivalent to
+# passwordless sudo privileges. This alias makes it easier to escalate
+# privileges only when required and only with a password prompt.
+alias sudock='sudo -g docker'
+
 # Batman does not seem to provide a completion function. We can reuse
 # `man`'s. It doesn't matter much if they don't have the same options, I
 # just want to be able to autocomplete man page names.
