@@ -113,6 +113,7 @@ alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
 alias less='less -SR'
 alias ls='ls --color=auto'
 alias ip='ip --color=auto'
+alias neovide='neovide --fork'
 
 alias ggrep='git grep -nC3'
 alias gsed='git --no-pager grep -z --full-name -l "." | xargs -0 sed -i'
