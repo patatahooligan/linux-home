@@ -3,7 +3,7 @@
 [includeIf "gitdir:~/devel/grnet/"]
     path = ~/devel/grnet/.gitconfig-grnet
 [core]
-	editor = nvim
+	editor = neovide
 	excludesfile = ~/.config/git/ignore
 	pager = delta
 [interactive]
