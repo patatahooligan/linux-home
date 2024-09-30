@@ -5,7 +5,7 @@
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["tray"],
     "modules-right": [
-        "sway/language","wireplumber",
+        "sway/language","wireplumber", "battery",
         "custom/temperature", "clock"],
 
     "sway/mode": {
@@ -23,6 +23,10 @@
     "tray": {
         // "icon-size": 21,
         "spacing": 10
+    },
+
+    "battery": {
+        "interval": 1
     },
 
     "clock": {
