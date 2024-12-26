@@ -1,5 +1,4 @@
 -- Custom configuration
-vim.g.neovide_refresh_rate = 240
 vim.g.neovide_cursor_animation_length = 0.03
 vim.g.neovide_hide_mouse_when_typing = true
 
