@@ -36,7 +36,8 @@
             "format": {
                 "today": "<span color='#FFFF00'><b><u>{}</u></b></span>"
             }
-        }
+        },
+        "on-click-right": "date --iso-8601=date | wl-copy -n"
     },
 
     "cpu": {
