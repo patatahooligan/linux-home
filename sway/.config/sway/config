@@ -21,23 +21,23 @@ set $term kitty
 set $menu dmenu_path | wofi -d -L5 --location=2 | xargs swaymsg exec --
 
 ### Output configuration
-output DP-2 resolution 2560x1440 position 0,300
-output DP-3 resolution 1920x1080@144Hz position 2560,0
-output DP-3 transform 270
+output DP-1 resolution 2560x1440 position 0,300
+output DP-2 resolution 1920x1080@144Hz position 2560,0
+output DP-2 transform 270
 # Originally downloaded from
 # https://cdna.artstation.com/p/assets/images/images/012/086/010/large/mikael-gustafsson-amongtrees-2-8.jpg?1532971442
 # Not included in the repo because of unclear copyright situation
 output * background /home/patatahooligan/Downloads/mikael-gustafsson-amongtrees-2-8.jpg fit #000000
-output DP-3 background /home/patatahooligan/Downloads/mikael-gustafsson-amongtrees-2-8.jpg center #000000
+output DP-2 background /home/patatahooligan/Downloads/mikael-gustafsson-amongtrees-2-8.jpg center #000000
 output * adaptive_sync on
 output * max_render_time off
 
-workspace 1 output DP-2
-workspace 2 output DP-3
+workspace 1 output DP-1
+workspace 2 output DP-2
 
 # Set "primary" monitor. The concept of primary display does not exist
 # in Wayland as far as I can tell, but it is necessary for some games.
-exec_always xrandr --output DP-2 --primary
+exec_always xrandr --output DP-1 --primary
 
 seat seat0 xcursor_theme pCircle-32 32
 
