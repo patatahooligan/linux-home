@@ -1,0 +1,15 @@
+[Unit]
+Description=Backup select directores from home to internal hdd
+# Make sure the hdd is mounted.
+BindsTo=media-data.mount
+After=media-data.mount
+# As an additional measure of safety, ensure the directory exists.
+# Otherwise, despite the mount point's existence, something might be
+# misconfigured and we might create issues by blindly proceeding.
+#ConditionPathIsDirectory=/media/data/backup/home-sync
+
+[Service]
+ExecStart=/usr/bin/rsync -ar --delete --delete-delay --stats --files-from=%h/.config/backup/dirlist %h /media/data/backup/home-sync/
+
+[Install]
+WantedBy=default.target
