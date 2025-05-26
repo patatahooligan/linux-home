@@ -39,7 +39,12 @@ workspace 2 output DP-2
 # in Wayland as far as I can tell, but it is necessary for some games.
 exec_always xrandr --output DP-1 --primary
 
-seat seat0 xcursor_theme pCircle-32 32
+# Temporarily disable cursor theme because it causes invisible cursor in
+# some occasions. I'm guessing it's missing some cursor type that is
+# requested by apps and sway falls back to not rendering it at all,
+# apparently. For example, this happens when hovering over cells in
+# excel online.
+#seat seat0 xcursor_theme pCircle-32 32
 
 ### Idle configuration
 #
