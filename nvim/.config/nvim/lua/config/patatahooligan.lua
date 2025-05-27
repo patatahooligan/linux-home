@@ -18,6 +18,9 @@ vim.opt.textwidth = 72
 
 vim.opt.clipboard = ""
 
+-- TODO: Figure out if this is needed, or it was just a lazy.vim thing
+--vim.g.autoformat = false
+
 -- Map greek characters to the english characters which use the same
 -- key. Essentially makes greek characters work for normal mode.
 vim.opt_global.langmap =
