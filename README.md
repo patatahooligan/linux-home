@@ -16,13 +16,6 @@ stow package-name
 
 where `package-name` is any top-level dir, eg "git", "zsh" etc.
 
-Be careful of stow folding directories, ie creating symlink to the
-highest level directory that it can. If undesired, invoke as
-
-```bash
-stow --no-folding package-name
-```
-
 The configs are used in arch linux. They might be incompatible with the
 software versions on any other distro.
 
