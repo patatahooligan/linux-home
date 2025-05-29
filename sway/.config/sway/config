@@ -13,12 +13,14 @@ set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu dmenu_path | wofi -d -L5 --location=2 | xargs swaymsg exec --
+set $editor neovide
 
 ### Output configuration
 output DP-1 resolution 2560x1440 position 0,300
@@ -230,6 +232,7 @@ bindsym --to-code Ctrl+Alt+b exec firefox --new-window
 bindsym --to-code Ctrl+Alt+s exec steam
 bindsym --to-code Ctrl+Alt+f exec nautilus
 bindsym --to-code Ctrl+Alt+l exec swaylock
+bindsym --to-code Ctrl+Alt+e exec $editor
 
 #
 # Status Bar:
