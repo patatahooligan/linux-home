@@ -87,16 +87,9 @@ window#waybar.chromium {
 #idle_inhibitor,
 #language,
 #mpd {
-    padding: 0 10px;
-    margin: 0 2px;
-    /* To get perfectly circular corners without complicating the math,
-     * we can just request a size that is definitely larger than the
-     * elements it affects. The size will be "clipped" by the smaller of
-     * the two dimensions. This results in the smaller sides becoming
-     * perfect semicircles and the other sides becoming straight lines
-     * between the semicircles. Something like `100vmax` seemed more
-     * appropriate but apparently it is not supported by waybar. */
-    border-radius: 1000px;
+    padding: 0 20px;
+    margin: 1px;
+    border-radius: 30px 3px;
     font-weight: bold;
 }
 
