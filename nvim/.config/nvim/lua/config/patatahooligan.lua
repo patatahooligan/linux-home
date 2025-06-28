@@ -1,5 +1,10 @@
 -- Custom configuration
 vim.opt.colorcolumn = "72,80,100,120"
+
+-- With the combination of `number` and `relativenumber` we see the
+-- absolute number only for the current line and relative numbers for
+-- the rest. See `:help number_relativenumber`.
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
