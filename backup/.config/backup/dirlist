@@ -4,3 +4,5 @@
 .ssh
 Downloads
 documents
+.var/app/org.yuzu_emu.yuzu/data/yuzu/nand/user/save/
+.var/app/org.yuzu_emu.yuzu/data/yuzu/nand/system/save/
