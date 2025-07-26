@@ -37,10 +37,6 @@ output * max_render_time off
 workspace 1 output DP-1
 workspace 2 output DP-2
 
-# Set "primary" monitor. The concept of primary display does not exist
-# in Wayland as far as I can tell, but it is necessary for some games.
-exec_always xrandr --output DP-1 --primary
-
 # Temporarily disable cursor theme because it causes invisible cursor in
 # some occasions. I'm guessing it's missing some cursor type that is
 # requested by apps and sway falls back to not rendering it at all,
