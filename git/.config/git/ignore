@@ -1,3 +1,6 @@
 build/
 .cache
 doxygen/
+
+# Used by pyenv
+.python-version
