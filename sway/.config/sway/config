@@ -31,7 +31,10 @@ output DP-2 transform 270
 # Not included in the repo because of unclear copyright situation
 output * background /home/patatahooligan/Downloads/mikael-gustafsson-amongtrees-2-8.jpg fit #000000
 output DP-2 background /home/patatahooligan/Downloads/mikael-gustafsson-amongtrees-2-8.jpg center #000000
-output * adaptive_sync on
+# VRR (on my current hardware at least) causes flickering that is
+# annoying for most daily tasks. Let's have it off by default and toggle
+# it on only for games.
+output * adaptive_sync off
 output * max_render_time off
 
 workspace 1 output DP-1
