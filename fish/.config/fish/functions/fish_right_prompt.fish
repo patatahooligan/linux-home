@@ -1,3 +1,17 @@
+# This is a modified version of the "scales" prompt. The original prompt
+# only shows if there exist any type of changes, but not the count. For
+# example, if two files have changed, scales would show only "✱". With
+# our version we get "✱2".
+#
+# This should be doable with `fish_git_prompt`, but it will take some
+# effort to figure out how to set that up to be as pretty as what I have
+# now. Use our custom implementation for now and experiment with
+# migrating whenever.
+
+function count_occurences -a expr str
+    string match -ar "$expr" "$str" | count
+end
+
 function fish_right_prompt
         set -l cmd_status $status
         if test $cmd_status -ne 0
@@ -32,10 +46,10 @@ function fish_right_prompt
     
         # Get the commit difference counts between local and remote.
         command git rev-list --count --left-right 'HEAD...@{upstream}' 2>/dev/null \
-                | read -d \t -l status_ahead status_behind
+                | read -d \t -l count_ahead count_behind
         if test $status -ne 0
-                set status_ahead 0
-                set status_behind 0
+                set count_ahead 0
+                set count_behind 0
         end
     
         # Get the stash status.
@@ -85,32 +99,19 @@ function fish_right_prompt
         #  B  |    |    |    | m  | r  | m  | u  |    |    |    |
         #  ?  |    |    |    | m  | r  | m  | u  |    |    | t  |
         #  _  |    |    | d  | m  | r  | m  | u  |    |    |    |
-        set -l porcelain_status (command git status --porcelain 2>/dev/null | string sub -l2)
+        set -l porcelain_status (
+            command git status --porcelain --ignored 2>/dev/null \
+            | string sub -l2 \
+            | string collect
+        )
     
-        set -l status_added 0
-        if string match -qr '[ACDMT][ MT]|[ACMT]D' $porcelain_status
-                set status_added 1
-        end
-        set -l status_deleted 0
-        if string match -qr '[ ACMRT]D' $porcelain_status
-                set status_deleted 1
-        end
-        set -l status_modified 0
-        if string match -qr '[MT]$' $porcelain_status
-                set status_modified 1
-        end
-        set -l status_renamed 0
-        if string match -qe R $porcelain_status
-                set status_renamed 1
-        end
-        set -l status_unmerged 0
-        if string match -qr 'AA|DD|U' $porcelain_status
-                set status_unmerged 1
-        end
-        set -l status_untracked 0
-        if string match -qe '\?\?' $porcelain_status
-                set status_untracked 1
-        end
+        set -l count_added (count_occurences '[ACDMT][ MT]|[ACMT]D' $porcelain_status)
+        set -l count_deleted (count_occurences '[ ACMRT]D' $porcelain_status)
+        set -l count_modified (count_occurences '[MT]\n' $porcelain_status)
+        set -l count_renamed (count_occurences 'R' $porcelain_status)
+        set -l count_unmerged (count_occurences 'AA|DD|U' $porcelain_status)
+        set -l count_untracked (count_occurences '\?\?' $porcelain_status)
+        set -l count_ignored (count_occurences '!!' $porcelain_status)
     
         set_color -o
     
@@ -129,32 +130,35 @@ function fish_right_prompt
                 set_color normal
                 echo -n (set_color white)':'(set_color -o brred)"$action"
         end
-        if test $status_ahead -ne 0
-                echo -n ' '(set_color brmagenta)'⬆'
+        if test $count_ahead -ne 0
+                echo -n ' '(set_color brmagenta)"⬆$count_ahead"
         end
-        if test $status_behind -ne 0
-                echo -n ' '(set_color brmagenta)'⬇'
+        if test $count_behind -ne 0
+                echo -n ' '(set_color brmagenta)"⬇$count_behind"
         end
         if test $status_stashed -ne 0
                 echo -n ' '(set_color cyan)'✭'
         end
-        if test $status_added -ne 0
-                echo -n ' '(set_color green)'✚'
+        if test $count_added -ne 0
+                echo -n ' '(set_color green)"✚$count_added"
         end
-        if test $status_deleted -ne 0
-                echo -n ' '(set_color red)'✖'
+        if test $count_deleted -ne 0
+                echo -n ' '(set_color red)"✖$count_deleted"
         end
-        if test $status_modified -ne 0
-                echo -n ' '(set_color blue)'✱'
+        if test $count_modified -ne 0
+                echo -n ' '(set_color blue)"✱$count_modified"
         end
-        if test $status_renamed -ne 0
-                echo -n ' '(set_color magenta)'➜'
+        if test $count_renamed -ne 0
+                echo -n ' '(set_color magenta)"➜$count_renamed"
         end
-        if test $status_unmerged -ne 0
-                echo -n ' '(set_color yellow)'═'
+        if test $count_unmerged -ne 0
+                echo -n ' '(set_color yellow)"═$count_unmerged"
         end
-        if test $status_untracked -ne 0
-                echo -n ' '(set_color white)'◼'
+        if test $count_untracked -ne 0
+                echo -n ' '(set_color white)"◼$count_untracked"
+        end
+        if test $count_ignored -ne 0
+                echo -n ' '(set_color white)"•"
         end
     
         set_color normal
