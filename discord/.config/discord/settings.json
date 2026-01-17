@@ -10,5 +10,7 @@
     "height": 1043
   },
   "chromiumSwitches": {},
-  "offloadAdmControls": false
+  "offloadAdmControls": true,
+  "enableHardwareAcceleration": true,
+  "asyncVideoInputDeviceInit": false
 }
