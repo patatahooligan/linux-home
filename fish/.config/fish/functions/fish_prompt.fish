@@ -100,12 +100,12 @@ function custom_git_prompt
     set -l porcelain_status (
     command git status --porcelain --ignored 2>/dev/null \
         | string sub -l2 \
-        | string collect
+        | string collect -N
     )
 
     set -l count_added (count_occurences '[ACDMT][ MT]|[ACMT]D' $porcelain_status)
     set -l count_deleted (count_occurences '[ ACMRT]D' $porcelain_status)
-    set -l count_modified (count_occurences '[MT]\n' $porcelain_status)
+    set -l count_modified (count_occurences '[ MTARC][MT]' $porcelain_status)
     set -l count_renamed (count_occurences 'R' $porcelain_status)
     set -l count_unmerged (count_occurences 'AA|DD|U' $porcelain_status)
     set -l count_untracked (count_occurences '\?\?' $porcelain_status)
