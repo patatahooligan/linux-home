@@ -1,5 +1,7 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    # Disable greeting by setting value to empty text.
+    set -g fish_greeting
+
     fish_add_path /usr/lib/jvm/default/bin
     source /usr/local/share/shell/settings
 
