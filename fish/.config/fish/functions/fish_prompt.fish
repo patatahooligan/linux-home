@@ -25,8 +25,7 @@ function custom_git_prompt
         return
     end
 
-    set_color normal
-    echo -n ' ('
+    echo -n (set_color brcyan)'git: '(set_color normal)'('
 
     # Get the current action ("merge", "rebase", etc.)
     # and if there's one get the current commit hash too.
@@ -160,7 +159,7 @@ function custom_git_prompt
     end
 
     set_color normal
-    echo -n ')'
+    echo ')'
 end
 
 function fish_prompt
@@ -172,20 +171,20 @@ function fish_prompt
         echo -n (set_color red)"✘ $cmd_status "
     end
 
+    custom_git_prompt
+
     if test -n "$SSH_TTY"
         echo -n (set_color brred)"$USER"(set_color white)'@'(set_color yellow)(prompt_hostname)' '
     end
 
-    echo -n (set_color -o FF8000)(prompt_pwd -d 0)' '
-
-    custom_git_prompt
-
-    echo
+    echo -n (set_color -o FF8000)(prompt_pwd -d 0)
 
     set_color -o
     if fish_is_root_user
         echo -n (set_color red)'# '
+    else
+        echo -n (set_color brcyan)' ➜ '
     end
-    echo -n (set_color red)'❯'(set_color yellow)'❯'(set_color green)'❯ '
+
     set_color normal
 end
