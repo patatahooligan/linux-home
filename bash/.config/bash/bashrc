@@ -5,6 +5,12 @@ if [ -f "$COMMON_SHELL_SETTINGS" ]; then
     source "$COMMON_SHELL_SETTINGS"
 fi
 
+# Bash does not support the XDG directory specification, so we have to
+# manually emulate support.
+STATE_DIR="${XDG_STATE_HOME:-$HOME/.local/state}"
+mkdir -p "$STATE_DIR"/bash
+export HISTFILE="$STATE_DIR"/bash/history
+
 # fzf
 . /usr/share/fzf/key-bindings.bash
 . /usr/share/fzf/completion.bash
