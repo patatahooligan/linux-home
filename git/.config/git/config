@@ -17,7 +17,7 @@
 	ff = only
 [merge]
 	tool = vimdiff
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 [receive]
 	denyCurrentBranch = updateInstead
 [init]
