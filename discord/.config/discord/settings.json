@@ -14,5 +14,7 @@
   "enableHardwareAcceleration": true,
   "asyncVideoInputDeviceInit": false,
   "openH264Enabled": true,
-  "enableLibOpenH264Electron": false
+  "enableLibOpenH264Electron": false,
+  "DESKTOP_TTI_UPDATE_BACKOFF_MAX_MS": 10000,
+  "DESKTOP_TTI_DNSTCP_WARMUP": true
 }
